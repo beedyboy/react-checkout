@@ -18,6 +18,11 @@ To get started with this project, follow these steps:
 3. Install the project dependencies by running `npm install`.
 4. Start the development server by running `npm start`.
 5. Open [http://localhost:3000](http://localhost:3000) in your web browser.
+6. Implement the requirements stated above.
+7. Commit your changes to the forked repository.
+8. Push the changes to the forked repository.
+9. Create a pull request to the original repository and make [@beedyboy](https://github.com/beedyboy) as a reviewer.
+
 
 ## Functionality
 
