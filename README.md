@@ -13,7 +13,7 @@ To run this application, you will need:
 
 To get started with this project, follow these steps:
 
-1. Fork this GitHub repository.
+1. Fork this GitHub [repository](https://github.com/beedyboy/react-checkout).
 2. Clone the forked repository to your local machine.
 3. Install the project dependencies by running `npm install`.
 4. Start the development server by running `npm start`.
