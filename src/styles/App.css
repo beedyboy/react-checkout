@@ -86,6 +86,14 @@
   margin: 0 5px;
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.discount-color{
+  color: green;
+}
+
 .product-card .product-quantity span {
   margin: 0 10px;
   font-size: 18px;
