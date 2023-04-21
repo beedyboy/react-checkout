@@ -1,0 +1,38 @@
+.App {
+  gap: 0px;
+  padding: 0px;
+}
+
+.loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-icon span {
+  visibility: hidden;
+}
+
+.loading-icon {
+  height: 100px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #1b1b1b;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: spin 2s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -91,6 +91,11 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+.cart-discount {
+  font-weight: bold;
+  color: rgb(16, 135, 35);
+}
      
 @media only screen and (max-width: 768px) {
   .App {
