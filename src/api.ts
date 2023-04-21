@@ -1,4 +1,4 @@
-export function getProducts() {
+/* export function getProducts() {
   return Promise.resolve([
     {
       id: 1,
@@ -71,4 +71,10 @@ export function getProducts() {
       quantity: 100,
     },
   ]);
+} */
+
+const getProducts = async () => {
+  return fetch('http://localhost:5000/api/products').then((response) => response.json())
 }
+
+export default getProducts;
