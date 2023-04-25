@@ -19,4 +19,4 @@ const Product: FC<{ product: ProductInterface; addProductToCart: Function; remov
 };
 
 
-export default Product
+export default memo(Product)
