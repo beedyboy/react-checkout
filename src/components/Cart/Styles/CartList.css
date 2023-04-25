@@ -1,0 +1,34 @@
+.product-grid {
+    grid-column: 1 / span 1;
+  }
+  
+  .checkout-grid {
+    grid-column: 2 / span 1;
+  }
+  .order-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .order-summary-table th,
+  .order-summary-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .order-summary-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .order-summary-table td {
+    vertical-align: top;
+  }
+  
+  .order-summary-table td:last-child {
+    text-align: right;
+  }
+  
+  .checkout-grid p {
+    margin: 8px 0;
+  }
