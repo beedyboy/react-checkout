@@ -1,14 +1,15 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { CheckoutUI } from "../ui";
 import { getProducts } from "../services";
+import { IOrder, IProduct } from "../ui/types";
 
 export default function Checkout() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<IProduct[]>([]);
   //TODO:// make cart a global variable using redux, so it can be populated even from the landing page
   //only localize order - see this effect for senior level adjustment
-  const [carts, setCarts] = useState([]); //using cart to ensure only selected products are added as order
+  const [carts, setCarts] = useState<number[]>([]); //using cart to ensure only selected products are added as order
   //order has property such as quantity
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState<IOrder[]>([]);
   useEffect(() => {
     async function fetchData() {
       const data = await getProducts();
@@ -18,19 +19,21 @@ export default function Checkout() {
   }, []);
   //TODO: move to redux function (global)
   const addProductToCart = useCallback(
-    (productId) => {
+    (productId: number) => {
       if (carts.indexOf(productId) === -1) {
         const order = products?.find((product) => product.id === productId);
         setCarts([...carts, productId]);
-        setOrders((orders) => [...orders, { ...order, quantity: 1 }]);
+        setOrders(
+          (orders) => [...orders, { ...order, quantity: 1 }] as IOrder[]
+        );
       }
     },
     [JSON.stringify(carts), JSON.stringify(products)]
   );
 
   //TODO: move to redux function (global)
-  const removeProductFromCart = useCallback(
-    (productId) => {
+  const removeFromCart = useCallback(
+    (productId: number) => {
       carts.splice(carts.indexOf(productId), 1);
       const orderIndex = orders.findIndex((order) => order.id === productId);
       if (orderIndex !== -1) {
@@ -42,7 +45,7 @@ export default function Checkout() {
     [JSON.stringify(carts), JSON.stringify(products)]
   );
   const increaseQty = useCallback(
-    (orderId) => {
+    (orderId: number) => {
       const orderIndex = orders?.findIndex((order) => order.id === orderId);
       if (orderIndex !== -1) {
         orders[orderIndex].quantity += 1;
@@ -52,7 +55,7 @@ export default function Checkout() {
     [JSON.stringify(orders)]
   );
   const decreaseQty = useCallback(
-    (orderId) => {
+    (orderId: number) => {
       const orderIndex = orders?.findIndex((order) => order.id === orderId);
       if (orderIndex !== -1) {
         orders[orderIndex].quantity -= 1;
@@ -70,8 +73,10 @@ export default function Checkout() {
       }}
       products={products}
       productListProps={{
-        addProductToCart,
-        removeProductFromCart,
+        productProps: {
+          addProductToCart,
+          removeFromCart,
+        },
       }}
     />
   );

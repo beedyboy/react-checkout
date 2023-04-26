@@ -1,17 +1,32 @@
 import React from "react";
 import LoadingIcon from "../LoadingIcon";
-import { ProductListUI } from "./ProductListUI";
+import { ProductListUI, ProductListUIProps } from "./ProductListUI";
 import { numberFormat } from "./common";
+import { IOrder, IProduct } from "./types";
 
-export const CheckoutUI = ({ products, orderProps, productListProps }) => {
+export interface OrderProps {
+  orders: IOrder[];
+  increaseQty: (orderId: number) => void;
+  decreaseQty: (orderId: number) => void;
+}
+export interface CheckoutUIProps {
+  products?: IProduct[];
+  orderProps?: OrderProps;
+  productListProps?: Omit<ProductListUIProps, "products">;
+}
+export const CheckoutUI: React.FC<CheckoutUIProps> = ({
+  products,
+  orderProps,
+  productListProps,
+}) => {
   const { orders, increaseQty, decreaseQty } = orderProps || {}; //js - incase undefined
-  if (!products) return <LoadingIcon />;
+  if (!products) return <LoadingIcon isLoading />;
   //total summary
   const total = {
     subTotal: 0,
     discount: 0,
   };
-  const calculateDiscount = (amount, percent) => {
+  const calculateDiscount = (amount: number, percent: number): number => {
     if (amount >= 1000) {
       return (amount / 100) * percent;
     }
@@ -57,7 +72,7 @@ export const CheckoutUI = ({ products, orderProps, productListProps }) => {
                     </button>
                     {item?.quantity}
                     <button
-                      disabled={item.quantity === product.quantity}
+                      disabled={item.quantity === product?.quantity}
                       onClick={() => increaseQty?.(item.id)}
                     >
                       +

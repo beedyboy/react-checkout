@@ -1,4 +1,6 @@
-export function getProducts() {
+import { IProduct } from "../ui/types";
+
+export function getProducts(): Promise<IProduct[]> {
   return Promise.resolve([
     {
       id: 1,
