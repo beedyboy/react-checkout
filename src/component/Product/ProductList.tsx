@@ -1,4 +1,4 @@
-import { FC, memo, MouseEventHandler } from "react";
+import { FC, memo } from "react";
 import { Product as ProductInterface } from "../../interface/product.interface";
 import Product from "./Product";
 
@@ -9,7 +9,7 @@ const ProductList: FC<{ products: ProductInterface[]; addProductToCart: Function
 
             <div className="card-container">
                 {products.map((product:ProductInterface) => (
-                    <div key={product.id} className="card">
+                    <div key={product.id} className="card" role="list">
                         <Product product={product} addProductToCart={() => addProductToCart(product.id)} removeFromCart={removeProductFromCart} />
                     </div>
                 ))}
