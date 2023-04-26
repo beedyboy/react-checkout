@@ -1,4 +1,12 @@
-export function getProducts() {
+import { IProduct } from "../ui/types";
+
+export async function getProductFromAPI(): Promise<IProduct[]> {
+  const { data } = await (
+    await fetch("http://localhost:8000/api/products")
+  ).json();
+  return data;
+}
+export function getProducts(): Promise<IProduct[]> {
   return Promise.resolve([
     {
       id: 1,
