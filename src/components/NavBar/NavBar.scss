@@ -1,0 +1,43 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+header {
+  @include display(row, space-between, center);
+
+  padding: 0.9rem 3rem;
+  background: $pri-color-1;
+
+  > div {
+    a {
+      @include font-stack(1.4rem, 700, 24px);
+
+      color: $acc-color-1;
+    }
+  }
+
+  > nav {
+    > ul {
+      @include display(row, unset, center);
+
+      gap: 1rem;
+
+      li {
+        @include font-stack(0.9rem, 500, 24px);
+
+        a {
+          color: #fff;
+
+          &:hover {
+            border-bottom: solid 2px $acc-color-1;
+          }
+
+          &.active {
+            color: $acc-color-1;
+            border-bottom: solid 2px $acc-color-1;
+
+          }
+        }
+      }
+    }
+  }
+}

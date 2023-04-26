@@ -7,7 +7,6 @@ import {
 
 import './App.css';
 import Checkout from './pages/Checkout';
-import NavBar from './components/NavBar/NavBar';
 import Product from './pages/Product';
 
 const router = createBrowserRouter(
@@ -22,7 +21,6 @@ const router = createBrowserRouter(
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <RouterProvider router={router} />
     </div>
   );

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { getProducts } from "../utils/api";
-import LoadingIcon from "../components/LoadingIcon/LoadingIcon";
+import React, { useState, useEffect } from 'react';
+import { getProducts } from '../utils/api';
+import LoadingIcon from '../components/LoadingIcon/LoadingIcon';
+import Layout from '../components/Layout';
 
 const Checkout = () => {
   const [products, setProducts] = useState([]);
@@ -16,7 +17,7 @@ const Checkout = () => {
 
   // const removeProductFromCart = (productId) => {};
   return (
-    <>
+    <Layout>
       <div className="checkout-grid">
         <h1>Order Summary</h1>
         <table className="order-summary-table">
@@ -47,7 +48,7 @@ const Checkout = () => {
         <p>Discount: $0</p>
         <p>Total: $0</p>
       </div>
-    </>
+    </Layout>
   );
 };
 
