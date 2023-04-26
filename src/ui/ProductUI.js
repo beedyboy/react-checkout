@@ -5,10 +5,10 @@ export const ProductUI = ({ product, addProductToCart, removeFromCart }) => {
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
       <p className="product-quantity">
-        <button onClick={addProductToCart}>Add</button>
+        <button onClick={() => addProductToCart?.(product.id)}>Add</button>
         Quantity:
         <span>{product.quantity}</span>
-        <button onClick={removeFromCart}>Remove</button>
+        <button onClick={() => removeFromCart?.(product.id)}>Remove</button>
       </p>
     </div>
   );

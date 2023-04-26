@@ -2,7 +2,7 @@ import React from "react";
 import LoadingIcon from "../LoadingIcon";
 import { ProductListUI } from "./ProductListUI";
 
-export const CheckoutUI = ({ products, productListProps }) => {
+export const CheckoutUI = ({ products, carts, productListProps }) => {
   if (!products) return <LoadingIcon />;
   return (
     <>
@@ -21,18 +21,23 @@ export const CheckoutUI = ({ products, productListProps }) => {
             </tr>
           </thead>
           <tbody>
-            {products.map((item) => (
-              <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>${item.price}</td>
-                <td>
-                  <button>-</button>
-                  {item.quantity}
-                  <button>+</button>
-                </td>
-                <td>${item.price}</td>
-              </tr>
-            ))}
+            {carts?.map((productId) => {
+              const item = products?.find(
+                (product) => product.id === productId
+              );
+              return (
+                <tr key={`cart-item-${item?.id}`}>
+                  <td>{item?.name}</td>
+                  <td>${item?.price}</td>
+                  <td>
+                    <button>-</button>
+                    {item?.quantity}
+                    <button>+</button>
+                  </td>
+                  <td>${item?.price}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
         <p>Subtotal: $0</p>

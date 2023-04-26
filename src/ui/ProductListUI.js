@@ -12,7 +12,11 @@ export const ProductListUI = ({
       <div className="card-container">
         {products.map((product) => (
           <div key={product.id} className="card">
-            <ProductUI product={product} />
+            <ProductUI
+              product={product}
+              addProductToCart={addProductToCart}
+              removeFromCart={removeProductFromCart}
+            />
           </div>
         ))}
       </div>

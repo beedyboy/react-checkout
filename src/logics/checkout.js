@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { CheckoutUI } from "../ui";
 import { getProducts } from "../services";
 
@@ -13,7 +13,7 @@ import { getProducts } from "../services";
  */
 export default function Checkout() {
   const [products, setProducts] = useState([]);
-
+  const [carts, setCarts] = useState([]);
   useEffect(() => {
     async function fetchData() {
       const data = await getProducts();
@@ -21,11 +21,25 @@ export default function Checkout() {
     }
     fetchData();
   }, []);
-  const addProductToCart = (productId) => {};
+  const addProductToCart = useCallback(
+    (productId) => {
+      if (carts.indexOf(productId) === -1) {
+        return setCarts([...carts, productId]);
+      }
+    },
+    [JSON.stringify(carts)]
+  );
 
-  const removeProductFromCart = (productId) => {};
+  const removeProductFromCart = useCallback(
+    (productId) => {
+      carts.splice(carts.indexOf(productId), 1);
+      setCarts([...carts]);
+    },
+    [JSON.stringify(carts)]
+  );
   return (
     <CheckoutUI
+      carts={carts}
       products={products}
       productListProps={{
         addProductToCart,
