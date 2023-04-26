@@ -5,8 +5,8 @@ const ProductList = ({
   products,
   addProductToCart,
   removeProductFromCart,
+  cart
 }: any) => {
-
   return (
     <section className="product-list">
       <h2>Order Products</h2>
@@ -17,7 +17,12 @@ const ProductList = ({
             className="card"
             style={{ backgroundImage: `url(${Img})` }}
           >
-            <Product product={product} addProductToCart={addProductToCart} removeProductFromCart={removeProductFromCart} />
+            <Product
+              product={product}
+              addProductToCart={addProductToCart}
+              removeProductFromCart={removeProductFromCart}
+              cart={cart}
+            />
           </div>
         ))}
       </div>

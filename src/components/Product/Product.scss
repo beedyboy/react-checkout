@@ -103,6 +103,13 @@ main.checkout {
                 color: #fff;
               }
             }
+
+            &:disabled {
+              background: rgb(247, 95, 95);
+              color: #fff;
+              cursor: not-allowed;
+              opacity: 0.2
+            }
           }
 
           > p {
@@ -120,9 +127,9 @@ main.checkout {
 }
 
 footer {
-    @include display(row, center, center);
-    @include font-stack(0.7rem, 500, 1rem);
+  @include display(row, center, center);
+  @include font-stack(0.7rem, 500, 1rem);
 
-    background: $pri-color-5;
-    padding: 10px;
+  background: $pri-color-5;
+  padding: 10px;
 }

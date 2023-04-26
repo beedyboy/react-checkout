@@ -35,6 +35,7 @@ const Checkout = () => {
           products={products}
           addProductToCart={addToCart}
           removeProductFromCart={removeFromCart}
+          cart={cart}
         />
         <OrderSummary />
       </main>
