@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import ProductList from '../components/Product/ProductList';
 import { getProducts } from '../utils/api';
-import LoadingIcon from '../components/LoadingIcon/LoadingIcon';
 import Layout from '../components/Layout';
 
-const Checkout = () => {
+import '../components/Product/Product.scss';
+import OrderSummary from '../components/Order/OrderSummary';
+
+const Product = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -13,43 +16,19 @@ const Checkout = () => {
     }
     fetchData();
   }, []);
-  // const addProductToCart = (productId) => {};
 
-  // const removeProductFromCart = (productId) => {};
   return (
     <Layout>
-      <div className="checkout-grid">
-        <h1>Order Summary</h1>
-        <table className="order-summary-table">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products?.map((item: any) => (
-              <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>${item.price}</td>
-                <td>
-                  <button>-</button>
-                  {item.quantity}
-                  <button>+</button>
-                </td>
-                <td>${item.price}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p>Subtotal: $0</p>
-        <p>Discount: $0</p>
-        <p>Total: $0</p>
-      </div>
+      <main className="checkout">
+        <ProductList
+          products={products}
+          // addProductToCart={addProductToCart}
+          // removeProductFromCart={removeProductFromCart}
+        />
+        <OrderSummary />
+      </main>
     </Layout>
   );
 };
 
-export default Checkout;
+export default Product;

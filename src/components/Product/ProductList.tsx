@@ -9,7 +9,7 @@ const ProductList = ({
   console.log(products);
   return (
     <section className="product-list">
-      <h1>Health Products</h1>
+      <h2>Order Products</h2>
       <div className="card-container">
         {products?.map((product: any) => (
           <div

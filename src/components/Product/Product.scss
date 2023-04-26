@@ -1,45 +1,18 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
 
-// .checkout-grid {
-//   grid-column: 2 / span 1;
-// }
+main.checkout {
+  @include display(row, unset, unset);
 
-// .order-summary-table {
-//   width: 100%;
-//   border-collapse: collapse;
-// }
-
-// .order-summary-table th,
-// .order-summary-table td {
-//   padding: 8px;
-//   text-align: left;
-//   border-bottom: 1px solid #ddd;
-// }
-
-// .order-summary-table th {
-//   background-color: #f2f2f2;
-// }
-
-// .order-summary-table td {
-//   vertical-align: top;
-// }
-
-// .order-summary-table td:last-child {
-//   text-align: right;
-// }
-
-// .checkout-grid p {
-//   margin: 8px 0;
-// }
+  padding: 0.9rem 0 0.9rem 3rem;
+  gap: 20px;
+}
 
 .product-list {
   @include display(column, unset, unset);
 
-  padding: 0.9rem 3rem;
-
-  > h1 {
-    @include font-stack(1.5rem, 500, 24px);
+  > h2 {
+    @include font-stack(1.1rem, 500, 24px);
 
     margin-bottom: 2rem;
     border-bottom: solid 3px $dark;
@@ -48,7 +21,9 @@
   }
 
   .card-container {
-    @include display-grid(1fr 1fr 1fr 1fr, 1rem);
+    @include display-grid(repeat(4, 1fr), 20px);
+
+    flex-wrap: wrap;
 
     .card {
       @include display(column, flex-end, center);
@@ -57,7 +32,6 @@
       padding-bottom: 0;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
-      width: 300px;
       height: 15rem;
 
       .product-card {
@@ -70,7 +44,7 @@
         height: 13rem;
         width: 100%;
         text-align: center;
-        color: #44536e;
+        color: $dark;
 
         > h2 {
           @include font-stack(1rem, 700, 24px);
@@ -80,13 +54,20 @@
         }
 
         > p {
-            margin-bottom: 0.8rem;
           &:nth-of-type(1) {
             @include font-stack(0.9rem, 500, 24px);
           }
 
           &:nth-of-type(2) {
-            @include font-stack(0.9rem, 500, 24px);
+            @include font-stack(0.7rem, 500, 24px);
+
+            span {
+              @include font-stack(0.8rem, 800, 24px);
+            }
+          }
+
+          &:nth-of-type(3) {
+            @include font-stack(0.8rem, 500, 24px);
           }
         }
 
@@ -125,7 +106,7 @@
           > p {
             @include font-stack(0.8rem, 500, 24px);
 
-            color: #44536e;
+            color: $dark;
             span {
               @include font-stack(0.9rem, 800, 24px);
             }

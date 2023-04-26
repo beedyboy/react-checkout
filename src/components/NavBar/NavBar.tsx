@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { MdShoppingCartCheckout } from 'react-icons/md';
 
 import './NavBar.scss';
 
@@ -15,15 +16,7 @@ const NavBar = () => {
               to="/"
               className={({ isActive }) => (isActive ? 'active' : '')}
             >
-              Products
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/checkout"
-              className={({ isActive }) => (isActive ? 'active' : '')}
-            >
-              Checkout
+              <MdShoppingCartCheckout />
             </NavLink>
           </li>
         </ul>
