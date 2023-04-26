@@ -26,6 +26,7 @@ export const CheckoutUI = ({ products, orderProps, productListProps }) => {
             </tr>
           </thead>
           <tbody>
+            {/* Using order with product structure to ensure only carted list show*/}
             {orders?.map((item) => {
               //using products directly to ensure updated quantity at all times
               const product = products?.find(

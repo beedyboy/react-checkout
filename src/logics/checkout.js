@@ -6,7 +6,7 @@ export default function Checkout() {
   const [products, setProducts] = useState([]);
   //TODO:// make cart a global variable using redux, so it can be populated even from the landing page
   //only localize order - see this effect for senior level adjustment
-  const [carts, setCarts] = useState([]);
+  const [carts, setCarts] = useState([]); //using cart to ensure only selected products are added as order
   //order has property such as quantity
   const [orders, setOrders] = useState([]);
   useEffect(() => {
