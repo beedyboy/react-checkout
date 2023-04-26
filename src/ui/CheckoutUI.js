@@ -71,6 +71,7 @@ export const CheckoutUI = ({ products, orderProps, productListProps }) => {
         <p>Subtotal: ${Number(total.subTotal).toLocaleString()}</p>
         <p>Discount: ${Number(total.discount).toLocaleString()}</p>
         <p>
+          {/*removed discount from total*/}
           Total: ${Number(total.subTotal - total.discount).toLocaleString()}
         </p>
       </div>
