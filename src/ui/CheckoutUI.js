@@ -10,6 +10,12 @@ export const CheckoutUI = ({ products, orderProps, productListProps }) => {
     subTotal: 0,
     discount: 0,
   };
+  const calculateDiscount = (amount, percent) => {
+    if (amount >= 1000) {
+      return (amount / 100) * percent;
+    }
+    return 0;
+  };
   return (
     <>
       <div className="product-grid">
@@ -36,6 +42,7 @@ export const CheckoutUI = ({ products, orderProps, productListProps }) => {
               const amount = item.quantity * item.price;
               //add to total amount
               total.subTotal += amount;
+              total.discount = calculateDiscount(total.subTotal, 10);
               return (
                 <tr key={`cart-item-${item?.id}`}>
                   <td>{item?.name}</td>
