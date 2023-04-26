@@ -8,10 +8,14 @@ header {
   background: $pri-color-1;
 
   > div {
+    @include display(row, unset, center);
+
+    gap: 10px;
+
     a {
       @include font-stack(1.4rem, 700, 24px);
 
-      color: $acc-color-1;
+      color: $dark;
     }
   }
 

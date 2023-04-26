@@ -6,6 +6,13 @@
   width: 100%;
   border-radius: 10px 0 0 0;
   padding: 10px;
+  margin-left: 0;
+  transition: all 0.5s ease-out;
+
+  &.show {
+    margin-left: 460px;
+    transition: all 0.5s ease-out
+  }
 
   > div {
     &:nth-of-type(1) {
@@ -102,3 +109,23 @@
     margin: 8px 0;
   }
 }
+
+.cart-slide {
+    &-enter {
+      transform: translate3d(90%, 0, 0);
+    }
+  
+    &-enter-active {
+      transform: translate3d(10%, 0, 0);
+      transition: transform 500ms ease-out;
+    }
+  
+    &-exit {
+      transform: translate3d(10%, 0, 0);
+    }
+  
+    &-exit-active {
+      transform: translate3d(90%, 0, 0);
+      transition: opacity 600ms ease-out, transform 500ms ease-out;
+    }
+  }
