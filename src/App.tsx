@@ -5,7 +5,6 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import './App.css';
 import Checkout from './pages/Checkout';
 import Product from './pages/Product';
 

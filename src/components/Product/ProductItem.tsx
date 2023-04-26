@@ -1,17 +1,18 @@
 const Product = ({ product, addProductToCart, removeFromCart }: any) => {
-    return (
-      <div className="product-card">
-        <h2>{product.name}</h2>
-        <p>{product.description}</p>
-        <p>Price: ${product.price}</p>
-        <p className="product-quantity">
-          <button onClick={addProductToCart}>Add</button>
-          Quantity:
-          <span>{product.quantity}</span>
-          <button onClick={removeFromCart}>Remove</button>
+  return (
+    <div className="product-card">
+      <h2>{product.name}</h2>
+      <p>${product.price}</p>
+      <p>{product.description}</p>
+      <div>
+        <button onClick={addProductToCart}>Add</button>
+        <p>
+          Qty: <span>{product.quantity}</span>
         </p>
+        <button onClick={removeFromCart}>Remove</button>
       </div>
-    );
+    </div>
+  );
 };
 
 export default Product;

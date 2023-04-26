@@ -3,6 +3,8 @@ import ProductList from '../components/Product/ProductList';
 import { getProducts } from '../utils/api';
 import Layout from '../components/Layout';
 
+import '../components/Product/Product.scss';
+
 const Product = () => {
   const [products, setProducts] = useState([]);
 
@@ -16,13 +18,11 @@ const Product = () => {
 
   return (
     <Layout>
-      <div className="product-grid">
-        <ProductList
-          products={products}
-          // addProductToCart={addProductToCart}
-          // removeProductFromCart={removeProductFromCart}
-        />
-      </div>
+      <ProductList
+        products={products}
+        // addProductToCart={addProductToCart}
+        // removeProductFromCart={removeProductFromCart}
+      />
     </Layout>
   );
 };
