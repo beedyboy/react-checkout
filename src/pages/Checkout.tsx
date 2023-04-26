@@ -1,57 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { getProducts } from "./api";
-import LoadingIcon from "./LoadingIcon";
-
-const Product = ({ product, addProductToCart, removeFromCart }) => {
-  return (
-    <div className="product-card">
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <p className="product-quantity">
-        <button onClick={addProductToCart}>Add</button>
-        Quantity:
-        <span>{product.quantity}</span>
-        <button onClick={removeFromCart}>Remove</button>
-      </p>
-    </div>
-  );
-};
-
-export const ProductList = ({ products, addProductToCart, removeProductFromCart }) => {
-  return (
-    <div>
-      <h1>Health Products</h1>
-
-      <div className="card-container">
-        {products.map((product) => (
-          <div key={product.id} className="card">
-            <Product product={product} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+import { getProducts } from "../utils/api";
+import LoadingIcon from "../components/LoadingIcon/LoadingIcon";
 
 const Checkout = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getProducts();
+      const data: any = await getProducts();
       setProducts(data);
     }
     fetchData();
   }, []);
-  const addProductToCart = (productId) => {};
+  // const addProductToCart = (productId) => {};
 
-  const removeProductFromCart = (productId) => {};
+  // const removeProductFromCart = (productId) => {};
   return (
     <>
-      <div className="product-grid">
-        <ProductList products={products} addProductToCart={addProductToCart} removeProductFromCart={removeProductFromCart} />
-      </div>
       <div className="checkout-grid">
         <h1>Order Summary</h1>
         <table className="order-summary-table">
@@ -64,7 +29,7 @@ const Checkout = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((item) => (
+            {products?.map((item: any) => (
               <tr key={item.id}>
                 <td>{item.name}</td>
                 <td>${item.price}</td>
