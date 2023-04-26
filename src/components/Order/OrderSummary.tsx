@@ -24,12 +24,18 @@ const OrderSummary = () => {
   };
 
   const subTotal = useMemo(() => calcSubTotal(), [cart]);
+  const discount = Number(subTotal)  > 1000 ? Number(subTotal) * 0.1 : 0;
 
   return (
     <section className={`order-summary ${!showOrder ? 'show' : ''}`}>
       <div onClick={() => setShowOrder(!showOrder)}>
         {showOrder && <GrClose />}
-        {!showOrder && <FaCartPlus />}
+        {!showOrder && 
+            <div>
+                <FaCartPlus />
+                <span>{cart.length}</span>
+            </div>
+        }
       </div>
       <h2>Order Summary</h2>
       <table className="order-summary-table">
@@ -49,7 +55,12 @@ const OrderSummary = () => {
               <td className="btn-cell">
                 <button onClick={() => removeFromCart(item)}>-</button>
                 <span>{item.cartQty}</span>
-                <button onClick={() => addToCart(item)} disabled={item.cartQty === item.quantity}>+</button>
+                <button
+                  onClick={() => addToCart(item)}
+                  disabled={item.cartQty === item.quantity}
+                >
+                  +
+                </button>
               </td>
               <td>${(item.price * item.cartQty).toFixed(2)}</td>
             </tr>
@@ -61,16 +72,15 @@ const OrderSummary = () => {
           <span>Subtotal:</span>
           <span>${subTotal}</span>
         </p>
-        {Number(subTotal) >= 1000 &&
-            (
-            <p>
-                <span>Discount:</span>
-                <span>$0</span>
-            </p>
-            )}
+        {Number(subTotal) >= 1000 && (
+          <p>
+            <span>Discount:</span>
+            <span>${(discount).toFixed(2)}</span>
+          </p>
+        )}
         <p>
           <span>Total:</span>
-          <span>$0</span>
+          <span>${(Number(subTotal) - discount).toFixed(2)}</span>
         </p>
       </div>
       <button>Checkout</button>

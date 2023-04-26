@@ -19,7 +19,24 @@
 
         font-size: 1.5rem;
         margin-bottom: 1rem;
-        cursor: pointer
+        cursor: pointer;
+        
+        > div {
+          position: relative;
+          
+          span {
+            @include font-stack(0.9rem, 500, 24px);
+            @include position(absolute, -10px, unset, -10px, unset);
+            @include display(row, center, center);
+  
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            color: #fff;
+          }
+        }
+
     }
 
     &:nth-of-type(2) {
