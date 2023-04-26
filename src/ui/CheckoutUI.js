@@ -1,6 +1,7 @@
 import React from "react";
 import LoadingIcon from "../LoadingIcon";
 import { ProductListUI } from "./ProductListUI";
+import { numberFormat } from "./common";
 
 export const CheckoutUI = ({ products, orderProps, productListProps }) => {
   const { orders, increaseQty, decreaseQty } = orderProps || {}; //js - incase undefined
@@ -62,17 +63,17 @@ export const CheckoutUI = ({ products, orderProps, productListProps }) => {
                       +
                     </button>
                   </td>
-                  <td>${Number(amount).toLocaleString()}</td>
+                  <td>${numberFormat(amount)}</td>
                 </tr>
               );
             })}
           </tbody>
         </table>
-        <p>Subtotal: ${Number(total.subTotal).toLocaleString()}</p>
-        <p>Discount: ${Number(total.discount).toLocaleString()}</p>
+        <p>Subtotal: ${numberFormat(total.subTotal)}</p>
+        <p>Discount: ${numberFormat(total.discount)}</p>
         <p>
           {/*removed discount from total*/}
-          Total: ${Number(total.subTotal - total.discount).toLocaleString()}
+          Total: ${numberFormat(total.subTotal - total.discount)}
         </p>
       </div>
     </>
