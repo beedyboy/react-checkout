@@ -5,6 +5,7 @@ import { ProductListUI } from "./ProductListUI";
 export const CheckoutUI = ({ products, orderProps, productListProps }) => {
   const { orders, increaseQty, decreaseQty } = orderProps || {}; //js - incase undefined
   if (!products) return <LoadingIcon />;
+  //total summary
   const total = {
     subTotal: 0,
     discount: 0,
@@ -33,6 +34,7 @@ export const CheckoutUI = ({ products, orderProps, productListProps }) => {
                 (product) => product.id === item.id
               );
               const amount = item.quantity * item.price;
+              //add to total amount
               total.subTotal += amount;
               return (
                 <tr key={`cart-item-${item?.id}`}>
