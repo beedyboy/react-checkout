@@ -18,6 +18,7 @@ export const ProductUI: React.FC<ProductUIProps> = ({
       <p>Price: ${numberFormat(product?.price)}</p>
       <p className="product-quantity">
         <button
+          data-testid={`btn-cart-add-${product?.id}`}
           onClick={() => {
             if (product?.id) addProductToCart?.(product.id);
           }}
@@ -27,6 +28,7 @@ export const ProductUI: React.FC<ProductUIProps> = ({
         Quantity:
         <span>{product?.quantity}</span>
         <button
+          data-testid={`btn-cart-remove-${product?.id}`}
           onClick={() => {
             if (product?.id) removeFromCart?.(product.id);
           }}

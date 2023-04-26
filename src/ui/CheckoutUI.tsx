@@ -60,18 +60,25 @@ export const CheckoutUI: React.FC<CheckoutUIProps> = ({
               total.subTotal += amount;
               total.discount = calculateDiscount(total.subTotal, 10);
               return (
-                <tr key={`cart-item-${item?.id}`}>
+                <tr
+                  data-testid={`row-order-${item.id}`}
+                  key={`cart-item-${item?.id}`}
+                >
                   <td>{item?.name}</td>
                   <td>${item?.price}</td>
                   <td>
                     <button
+                      data-testid={`btn-order-decrease-${item.id}`}
                       disabled={item.quantity === 1}
                       onClick={() => decreaseQty?.(item.id)}
                     >
                       -
                     </button>
-                    {item?.quantity}
+                    <div data-testid={`qty-order-${item.id}`}>
+                      {item?.quantity}
+                    </div>
                     <button
+                      data-testid={`btn-order-increase-${item.id}`}
                       disabled={item.quantity === product?.quantity}
                       onClick={() => increaseQty?.(item.id)}
                     >
