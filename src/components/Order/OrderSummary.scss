@@ -100,32 +100,16 @@
 
             padding: 2px 20px;
             background: $dark;
-            color: #fff
+            color: #fff;
+
+            &:disabled {
+              background: $dark;
+              color: #fff;
+              cursor: not-allowed;
+              opacity: 0.2
+            }
         }
     }
   }
 
-  .checkout-grid p {
-    margin: 8px 0;
-  }
 }
-
-.cart-slide {
-    &-enter {
-      transform: translate3d(90%, 0, 0);
-    }
-  
-    &-enter-active {
-      transform: translate3d(10%, 0, 0);
-      transition: transform 500ms ease-out;
-    }
-  
-    &-exit {
-      transform: translate3d(10%, 0, 0);
-    }
-  
-    &-exit-active {
-      transform: translate3d(90%, 0, 0);
-      transition: opacity 600ms ease-out, transform 500ms ease-out;
-    }
-  }

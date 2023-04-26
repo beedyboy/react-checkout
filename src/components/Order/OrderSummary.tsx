@@ -49,9 +49,9 @@ const OrderSummary = () => {
               <td className="btn-cell">
                 <button onClick={() => removeFromCart(item)}>-</button>
                 <span>{item.cartQty}</span>
-                <button onClick={() => addToCart(item)}>+</button>
+                <button onClick={() => addToCart(item)} disabled={item.cartQty === item.quantity}>+</button>
               </td>
-              <td>${(item.price * item.cartQty.toFixed(2))}</td>
+              <td>${(item.price * item.cartQty).toFixed(2)}</td>
             </tr>
           ))}
         </tbody>
