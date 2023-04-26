@@ -1,6 +1,6 @@
 import create from 'zustand';
 import { persist } from 'zustand/middleware';
-import { ProductState, StoreState } from './types';
+import { StoreState } from './types';
 
 const useProductStore = create<StoreState>()(
   persist(

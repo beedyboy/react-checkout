@@ -1,7 +1,5 @@
 import Product from './ProductItem';
 import Img from '../../assets/images/health.jpg';
-import { useEffect, useState } from 'react';
-import { getProducts } from '../../utils/api';
 
 const ProductList = ({
   products,
@@ -19,7 +17,7 @@ const ProductList = ({
             className="card"
             style={{ backgroundImage: `url(${Img})` }}
           >
-            <Product product={product} addProductToCart={addProductToCart} />
+            <Product product={product} addProductToCart={addProductToCart} removeProductFromCart={removeProductFromCart} />
           </div>
         ))}
       </div>

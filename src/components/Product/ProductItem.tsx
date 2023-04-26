@@ -1,4 +1,4 @@
-const Product = ({ product, addProductToCart, removeFromCart }: any) => {
+const Product = ({ product, addProductToCart, removeProductFromCart }: any) => {
   return (
     <div className="product-card">
       <h2>{product.name}</h2>
@@ -10,7 +10,7 @@ const Product = ({ product, addProductToCart, removeFromCart }: any) => {
         <p>
           <span>{product.quantity}</span>
         </p>
-        <button onClick={removeFromCart}>Remove</button>
+        <button onClick={() => removeProductFromCart(product)}>Remove</button>
       </div>
     </div>
   );

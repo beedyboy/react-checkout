@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { FaCartPlus } from 'react-icons/fa';
 import { shallow } from 'zustand/shallow';
 
 import './OrderSummary.scss';
 import { GrClose } from 'react-icons/gr';
 import useProductStore from '../../utils/store';
-import { ProductState } from '../../utils/types';
-
-// type StoreState = {
-//   cart: ProductState[];
-//   addToCart: (id: number) => void;
-// };
 
 const OrderSummary = () => {
   const [showOrder, setShowOrder] = useState(true);
@@ -23,15 +17,13 @@ const OrderSummary = () => {
   );
   const cart = useProductStore((state) => state.cart);
 
-  const addProductToCart = (product: ProductState) => {
-    addToCart(product);
+  const calcSubTotal = () => {
+    return cart
+      .reduce((acc, cur) => cur.cartQty * cur.price + acc, 0)
+      .toFixed(2);
   };
 
-  console.log(cart);
-
-  const removeProductFromCart = (product: ProductState) => {
-      removeFromCart(product);
-  };
+  const subTotal = useMemo(() => calcSubTotal(), [cart]);
 
   return (
     <section className={`order-summary ${!showOrder ? 'show' : ''}`}>
@@ -55,11 +47,11 @@ const OrderSummary = () => {
               <td>{item.name}</td>
               <td>${item.price}</td>
               <td className="btn-cell">
-                <button onClick={() => removeProductFromCart(item)}>-</button>
+                <button onClick={() => removeFromCart(item)}>-</button>
                 <span>{item.cartQty}</span>
-                <button onClick={() => addProductToCart(item)}>+</button>
+                <button onClick={() => addToCart(item)}>+</button>
               </td>
-              <td>${item.price}</td>
+              <td>${(item.price * item.cartQty.toFixed(2))}</td>
             </tr>
           ))}
         </tbody>
@@ -67,12 +59,15 @@ const OrderSummary = () => {
       <div>
         <p>
           <span>Subtotal:</span>
-          <span>$0</span>
+          <span>${subTotal}</span>
         </p>
-        <p>
-          <span>Discount:</span>
-          <span>$0</span>
-        </p>
+        {Number(subTotal) >= 1000 &&
+            (
+            <p>
+                <span>Discount:</span>
+                <span>$0</span>
+            </p>
+            )}
         <p>
           <span>Total:</span>
           <span>$0</span>
