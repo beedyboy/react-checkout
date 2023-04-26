@@ -4,12 +4,14 @@
 main.checkout {
   @include display(row, unset, unset);
 
-  padding: 0.9rem 0 0.9rem 3rem;
+  padding: 0.9rem 0 0 3rem;
   gap: 20px;
 }
 
 .product-list {
   @include display(column, unset, unset);
+
+  margin-bottom: 20px;
 
   > h2 {
     @include font-stack(1.1rem, 500, 24px);
@@ -115,4 +117,12 @@ main.checkout {
       }
     }
   }
+}
+
+footer {
+    @include display(row, center, center);
+    @include font-stack(0.7rem, 500, 1rem);
+
+    background: $pri-color-5;
+    padding: 10px;
 }
