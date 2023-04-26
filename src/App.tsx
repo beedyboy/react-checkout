@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import Checkout from "./Checkout";
+import Checkout from "./pages/Checkout";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App"> 
-        <Checkout /> 
+      <Checkout /> 
     </div>
   );
 }

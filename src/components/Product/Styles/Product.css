@@ -1,0 +1,37 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .product-card h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .product-card p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .product-card .product-quantity {
+    display: flex;
+    align-items: center;
+  }
+  
+  .product-card .product-quantity button {
+    border: none;
+    background-color: #f5f5f5;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+  
+  .product-card .product-quantity span {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
