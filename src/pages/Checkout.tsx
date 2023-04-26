@@ -8,6 +8,7 @@ import '../components/Product/Product.scss';
 import OrderSummary from '../components/Order/OrderSummary';
 import useProductStore from '../utils/store';
 import { ProductState } from '../utils/types';
+import LoadingIcon from '../components/LoadingIcon/LoadingIcon';
 
 const Checkout = () => {
   const [products, setProducts] = useState([]);
@@ -23,7 +24,10 @@ const Checkout = () => {
   useEffect(() => {
     async function fetchData() {
       const data: any = await getProducts();
-      setProducts(data);
+      setTimeout(() => {
+        setProducts(data);
+
+      }, 3000)
     }
     fetchData();
   }, []);
@@ -31,12 +35,16 @@ const Checkout = () => {
   return (
     <Layout>
       <main className="checkout">
-        <ProductList
-          products={products}
-          addProductToCart={addToCart}
-          removeProductFromCart={removeFromCart}
-          cart={cart}
-        />
+        {products.length <= 0 ? (
+          <LoadingIcon isLoading={products.length === 0} />
+        ) : (
+          <ProductList
+            products={products}
+            addProductToCart={addToCart}
+            removeProductFromCart={removeFromCart}
+            cart={cart}
+          />
+        )}
         <OrderSummary />
       </main>
     </Layout>

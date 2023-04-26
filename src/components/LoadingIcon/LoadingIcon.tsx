@@ -1,11 +1,11 @@
-import "./LoadingIcon.css";
+import './LoadingIcon.scss';
 
-const LoadingIcon = ({ isLoading }: any) => {
-  return (
-    <div className={`loading-icon ${isLoading ? "loading" : ""}`}>
-      <span>Health Shop</span>
-    </div>
-  );
+type LoadingIconType = {
+  isLoading: boolean;
+};
+
+const LoadingIcon = ({ isLoading }: LoadingIconType) => {
+  return <div className="lds-dual-ring"></div>;
 };
 
 export default LoadingIcon;

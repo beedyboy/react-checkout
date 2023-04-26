@@ -57,6 +57,10 @@
     }
   }
 
+  .no-items {
+    @include font-stack(1.2rem, 600, 24px);
+  }
+
   > button {
     @include font-stack(0.9rem, 500, 24px);
 
@@ -70,6 +74,11 @@
 
     &:hover {
       background: $acc-color-1;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.2
     }
   }
 

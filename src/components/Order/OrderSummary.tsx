@@ -24,49 +24,53 @@ const OrderSummary = () => {
   };
 
   const subTotal = useMemo(() => calcSubTotal(), [cart]);
-  const discount = Number(subTotal)  > 1000 ? Number(subTotal) * 0.1 : 0;
+  const discount = Number(subTotal) > 1000 ? Number(subTotal) * 0.1 : 0;
 
   return (
     <section className={`order-summary ${!showOrder ? 'show' : ''}`}>
       <div onClick={() => setShowOrder(!showOrder)}>
         {showOrder && <GrClose />}
-        {!showOrder && 
-            <div>
-                <FaCartPlus />
-                <span>{cart.length}</span>
-            </div>
-        }
+        {!showOrder && (
+          <div>
+            <FaCartPlus />
+            <span>{cart.length}</span>
+          </div>
+        )}
       </div>
       <h2>Order Summary</h2>
-      <table className="order-summary-table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cart?.map((item: any) => (
-            <tr key={item.id}>
-              <td>{item.name}</td>
-              <td>${item.price}</td>
-              <td className="btn-cell">
-                <button onClick={() => removeFromCart(item)}>-</button>
-                <span>{item.cartQty}</span>
-                <button
-                  onClick={() => addToCart(item)}
-                  disabled={item.cartQty === item.quantity}
-                >
-                  +
-                </button>
-              </td>
-              <td>${(item.price * item.cartQty).toFixed(2)}</td>
+      {cart && cart.length < 1 ? (
+        <p className="no-items">No items in cart</p>
+      ) : (
+        <table className="order-summary-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {cart?.map((item: any) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>${item.price}</td>
+                <td className="btn-cell">
+                  <button onClick={() => removeFromCart(item)}>-</button>
+                  <span>{item.cartQty}</span>
+                  <button
+                    onClick={() => addToCart(item)}
+                    disabled={item.cartQty === item.quantity}
+                  >
+                    +
+                  </button>
+                </td>
+                <td>${(item.price * item.cartQty).toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
       <div>
         <p>
           <span>Subtotal:</span>
@@ -75,7 +79,7 @@ const OrderSummary = () => {
         {Number(subTotal) >= 1000 && (
           <p>
             <span>Discount:</span>
-            <span>${(discount).toFixed(2)}</span>
+            <span>${discount.toFixed(2)}</span>
           </p>
         )}
         <p>
@@ -83,7 +87,7 @@ const OrderSummary = () => {
           <span>${(Number(subTotal) - discount).toFixed(2)}</span>
         </p>
       </div>
-      <button>Checkout</button>
+      <button disabled={cart.length < 1}>Checkout</button>
     </section>
   );
 };
