@@ -1,12 +1,14 @@
 import Product from './ProductItem';
 import Img from '../../assets/images/health.jpg';
+import { useEffect, useState } from 'react';
+import { getProducts } from '../../utils/api';
 
 const ProductList = ({
   products,
   addProductToCart,
   removeProductFromCart,
 }: any) => {
-  console.log(products);
+
   return (
     <section className="product-list">
       <h2>Order Products</h2>
@@ -17,7 +19,7 @@ const ProductList = ({
             className="card"
             style={{ backgroundImage: `url(${Img})` }}
           >
-            <Product product={product} />
+            <Product product={product} addProductToCart={addProductToCart} />
           </div>
         ))}
       </div>

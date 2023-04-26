@@ -6,7 +6,7 @@ const Product = ({ product, addProductToCart, removeFromCart }: any) => {
       <p>Available Quantity: <span>{product.quantity}</span></p>
       <p>{product.description}</p>
       <div>
-        <button onClick={addProductToCart}>Add</button>
+        <button onClick={() => addProductToCart(product)}>Add</button>
         <p>
           <span>{product.quantity}</span>
         </p>
