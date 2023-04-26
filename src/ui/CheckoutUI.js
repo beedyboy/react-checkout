@@ -2,7 +2,8 @@ import React from "react";
 import LoadingIcon from "../LoadingIcon";
 import { ProductListUI } from "./ProductListUI";
 
-export const CheckoutUI = ({ products, carts, productListProps }) => {
+export const CheckoutUI = ({ products, orderProps, productListProps }) => {
+  const { orders, increaseQty, decreaseQty } = orderProps || {}; //js - incase undefined
   if (!products) return <LoadingIcon />;
   return (
     <>
@@ -21,18 +22,29 @@ export const CheckoutUI = ({ products, carts, productListProps }) => {
             </tr>
           </thead>
           <tbody>
-            {carts?.map((productId) => {
-              const item = products?.find(
-                (product) => product.id === productId
+            {orders?.map((item) => {
+              //using products directly to ensure updated quantity at all times
+              const product = products?.find(
+                (product) => product.id === item.id
               );
               return (
                 <tr key={`cart-item-${item?.id}`}>
                   <td>{item?.name}</td>
                   <td>${item?.price}</td>
                   <td>
-                    <button>-</button>
+                    <button
+                      disabled={item.quantity === 1}
+                      onClick={() => decreaseQty?.(item.id)}
+                    >
+                      -
+                    </button>
                     {item?.quantity}
-                    <button>+</button>
+                    <button
+                      disabled={item.quantity === product.quantity}
+                      onClick={() => increaseQty?.(item.id)}
+                    >
+                      +
+                    </button>
                   </td>
                   <td>${item?.price}</td>
                 </tr>
