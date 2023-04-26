@@ -5,6 +5,10 @@ import { ProductListUI } from "./ProductListUI";
 export const CheckoutUI = ({ products, orderProps, productListProps }) => {
   const { orders, increaseQty, decreaseQty } = orderProps || {}; //js - incase undefined
   if (!products) return <LoadingIcon />;
+  const total = {
+    subTotal: 0,
+    discount: 0,
+  };
   return (
     <>
       <div className="product-grid">
@@ -27,6 +31,8 @@ export const CheckoutUI = ({ products, orderProps, productListProps }) => {
               const product = products?.find(
                 (product) => product.id === item.id
               );
+              const amount = item.quantity * item.price;
+              total.subTotal += amount;
               return (
                 <tr key={`cart-item-${item?.id}`}>
                   <td>{item?.name}</td>
@@ -46,15 +52,17 @@ export const CheckoutUI = ({ products, orderProps, productListProps }) => {
                       +
                     </button>
                   </td>
-                  <td>${item?.price}</td>
+                  <td>${Number(amount).toLocaleString()}</td>
                 </tr>
               );
             })}
           </tbody>
         </table>
-        <p>Subtotal: $0</p>
-        <p>Discount: $0</p>
-        <p>Total: $0</p>
+        <p>Subtotal: ${Number(total.subTotal).toLocaleString()}</p>
+        <p>Discount: ${Number(total.discount).toLocaleString()}</p>
+        <p>
+          Total: ${Number(total.subTotal - total.discount).toLocaleString()}
+        </p>
       </div>
     </>
   );
