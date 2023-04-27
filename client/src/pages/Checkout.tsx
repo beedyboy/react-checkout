@@ -22,8 +22,9 @@ const Checkout = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const data: any = await getProducts();
-        setProducts(data);
+      const res = await fetch('http://localhost:5000/products')
+      const data = await res.json();
+      setProducts(data.products);
     }
     fetchData();
   }, []);
