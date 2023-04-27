@@ -56,7 +56,14 @@ const Checkout = () => {
     }
     fetchData();
   }, []);
-  const addProductToCart = (productId) => {};
+
+  const addProductToCart = (productId) => {
+    setCart((prevCart) => {
+      const newCart = { ...prevCart };
+      newCart[productId] = (newCart[productId] || 0) + 1;
+      return newCart;
+    });
+  };
 
   const removeProductFromCart = (productId) => {};
   return (
