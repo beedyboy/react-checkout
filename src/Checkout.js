@@ -122,14 +122,19 @@ const Checkout = () => {
                 </tr>
               </thead>
               <tbody>
-                {products.map((item) => (
+                {cartItems.map((item) => (
                   <tr key={item.id}>
                     <td>{item.name}</td>
                     <td>${item.price}</td>
                     <td>
                       <button>-</button>
                       {item.quantity}
-                      <button>+</button>
+                      <button
+                        disabled={item.quantity >= productCount ? true : false}
+                        onClick={() => addProductToCart(item.id)}
+                      >
+                        +
+                      </button>
                     </td>
                     <td>${item.price}</td>
                   </tr>
