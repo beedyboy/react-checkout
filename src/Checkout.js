@@ -11,6 +11,16 @@ const Product = ({
     cart[product.id] || 0
   );
 
+  const handleAddToCart = () => {
+    addProductToCart(product.id);
+    setQuantity(quantity + 1);
+  };
+
+  const handleRemoveFromCart = () => {
+    removeFromCart(product.id);
+    setQuantity(quantity - 1);
+  };
+
   return (
     <div className="product-card">
       <h2>{product.name}</h2>
