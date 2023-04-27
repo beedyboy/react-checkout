@@ -32,10 +32,20 @@ const Product = ({
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
       <p className="product-quantity">
-        <button onClick={addProductToCart}>Add</button>
+        <button
+          onClick={handleAddToCart}
+          disabled={isAddDisabled}
+        >
+          Add
+        </button>
         Quantity:
         <span>{product.quantity}</span>
-        <button onClick={removeFromCart}>Remove</button>
+        <button
+          onClick={handleRemoveFromCart}
+          disabled={isRemoveDisabled}
+        >
+          Remove
+        </button>
       </p>
     </div>
   );
