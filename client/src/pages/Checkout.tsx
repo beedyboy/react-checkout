@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import ProductList from '../components/Product/ProductList';
-import { getProducts } from '../utils/api';
 import Layout from '../components/Layout';
 import { shallow } from 'zustand/shallow';
 
