@@ -41,6 +41,8 @@ export const ProductList = ({
 const Checkout = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsloading] = useState(true);
+  const [productCount, setProductCount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -55,7 +57,41 @@ const Checkout = () => {
     fetchData();
   }, []);
 
-  const addProductToCart = (productId) => {};
+  const addProductToCart = (productId) => {
+    // find the max-quantity for each product
+    setProductCount(
+      products.find((product) => product.id === productId).quantity
+    );
+
+    // copy items inside cart to a temp-cart variable
+    const updatedCartItems = [...cartItems];
+
+    // search if item already exists in cart
+    const existingItemIndex = updatedCartItems.findIndex(
+      (item) => item.id === productId
+    );
+
+    // if item already exists in temp-cart increase quantity and recalculate total
+    if (existingItemIndex > -1) {
+      updatedCartItems[existingItemIndex].quantity++;
+      updatedCartItems[existingItemIndex].total =
+        updatedCartItems[existingItemIndex].price *
+        updatedCartItems[existingItemIndex].quantity;
+    }
+    // if its a new item create an object to represent it and push to temp-cart
+    else {
+      updatedCartItems.push({
+        id: products.find((product) => product.id === productId).id,
+        name: products.find((product) => product.id === productId).name,
+        quantity: 1,
+        price: products.find((product) => product.id === productId).price,
+        total: products.find((product) => product.id === productId).price * 1,
+      });
+    }
+
+    // save updated values from temp-cart to actual cart
+    setCartItems(updatedCartItems);
+  };
 
   const removeProductFromCart = (productId) => {};
   return (
