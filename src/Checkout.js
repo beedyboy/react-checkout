@@ -21,6 +21,11 @@ const Product = ({
     setQuantity(quantity - 1);
   };
 
+  const isAddDisabled =
+    product.quantity === 0 ||
+    (cart[product.id] || 0) === product.quantity;
+  const isRemoveDisabled = (cart[product.id] || 0) === 0;
+
   return (
     <div className="product-card">
       <h2>{product.name}</h2>
