@@ -172,7 +172,12 @@ const Checkout = () => {
                     <td>{item.name}</td>
                     <td>${item.price}</td>
                     <td>
-                      <button>-</button>
+                      <button
+                        disabled={item.quantity <= 0 ? true : false}
+                        onClick={() => removeProductFromCart(item.id)}
+                      >
+                        -
+                      </button>
                       {item.quantity}
                       <button
                         disabled={item.quantity >= productCount ? true : false}
