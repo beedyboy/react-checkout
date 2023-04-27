@@ -31,7 +31,12 @@ const Product = ({
         </button>
         Quantity:
         <span>{product.quantity}</span>
-        <button onClick={removeProductFromCart}>Remove</button>
+        <button
+          disabled={quantity === 0 ? true : false}
+          onClick={() => removeProductFromCart(product.id)}
+        >
+          Remove
+        </button>
       </p>
     </div>
   );
