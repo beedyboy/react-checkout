@@ -3,6 +3,7 @@ import { getProducts } from "./api";
 import LoadingIcon from "./LoadingIcon";
 
 const Product = ({
+  cart,
   product,
   removeFromCart,
   addProductToCart,
@@ -53,6 +54,7 @@ const Product = ({
 };
 
 export const ProductList = ({
+  cart,
   products,
   addProductToCart,
   removeProductFromCart,
@@ -67,7 +69,12 @@ export const ProductList = ({
             key={product.id}
             className="card"
           >
-            <Product product={product} />
+            <Product
+              cart={cart}
+              product={product}
+              addProductToCart={addProductToCart}
+              removeProductFromCart={removeProductFromCart}
+            />
           </div>
         ))}
       </div>
