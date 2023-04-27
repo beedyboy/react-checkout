@@ -1,7 +1,12 @@
 import { useMemo } from 'react'
+import { ProductListTypes, ProductState } from '../../utils/types';
 
-const Product = ({ product, addProductToCart, removeProductFromCart, cart }: any) => {
-  const cartItem = useMemo(() => cart.find((item: any) => item.id === product.id), [cart]);
+type ProductItemType = {
+  product: ProductState;
+} & ProductListTypes;
+
+const Product = ({ product, addProductToCart, removeProductFromCart, cart }: ProductItemType) => {
+  const cartItem = useMemo(() => cart.find((item: any) => item.id === product.id), [cart, product.id]);
   product.cartQty = cartItem ? cartItem.cartQty : 0;
 
   return (

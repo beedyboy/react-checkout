@@ -9,6 +9,13 @@ export type ProductState = {
 
 export type StoreState = {
   cart: ProductState[];
-  addToCart: (id: number) => void;
-  removeFromCart: (id: number) => void;
+  addToCart: (product: ProductState) => void;
+  removeFromCart: (product: ProductState) => void;
 };
+
+export type ProductListTypes = {
+  products?: ProductState[];
+  addProductToCart: (product: ProductState) => void;
+  removeProductFromCart: (product: ProductState) => void;
+  cart: ProductState[];
+}

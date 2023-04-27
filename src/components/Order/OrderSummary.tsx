@@ -1,29 +1,22 @@
 import React, { useState, useMemo } from 'react';
 import { FaCartPlus } from 'react-icons/fa';
-import { shallow } from 'zustand/shallow';
 
 import './OrderSummary.scss';
 import { GrClose } from 'react-icons/gr';
-import useProductStore from '../../utils/store';
+import { ProductListTypes } from '../../utils/types';
 
-const OrderSummary = () => {
+const OrderSummary = ({
+  addProductToCart,
+  removeProductFromCart,
+  cart,
+}: ProductListTypes) => {
   const [showOrder, setShowOrder] = useState(true);
-  const { addToCart, removeFromCart } = useProductStore(
-    (state) => ({
-      addToCart: state.addToCart,
-      removeFromCart: state.removeFromCart,
-    }),
-    shallow
+
+  const subTotal = useMemo(
+    () =>
+      cart.reduce((acc, cur) => cur.cartQty * cur.price + acc, 0).toFixed(2),
+    [cart]
   );
-  const cart = useProductStore((state) => state.cart);
-
-  const calcSubTotal = () => {
-    return cart
-      .reduce((acc, cur) => cur.cartQty * cur.price + acc, 0)
-      .toFixed(2);
-  };
-
-  const subTotal = useMemo(() => calcSubTotal(), [cart]);
   const discount = Number(subTotal) > 1000 ? Number(subTotal) * 0.1 : 0;
 
   return (
@@ -56,10 +49,10 @@ const OrderSummary = () => {
                 <td>{item.name}</td>
                 <td>${item.price}</td>
                 <td className="btn-cell">
-                  <button onClick={() => removeFromCart(item)}>-</button>
+                  <button onClick={() => removeProductFromCart(item)}>-</button>
                   <span>{item.cartQty}</span>
                   <button
-                    onClick={() => addToCart(item)}
+                    onClick={() => addProductToCart(item)}
                     disabled={item.cartQty === item.quantity}
                   >
                     +

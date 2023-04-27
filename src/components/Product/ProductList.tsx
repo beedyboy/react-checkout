@@ -1,12 +1,12 @@
 import Product from './ProductItem';
-import Img from '../../assets/images/health.jpg';
+import { ProductListTypes } from '../../utils/types';
 
 const ProductList = ({
   products,
   addProductToCart,
   removeProductFromCart,
   cart
-}: any) => {
+}: ProductListTypes) => {
   return (
     <section className="product-list">
       <h2>Order Products</h2>
@@ -15,7 +15,7 @@ const ProductList = ({
           <div
             key={product.id}
             className="card"
-            style={{ backgroundImage: `url(${Img})` }}
+            style={{ backgroundImage: `url('/health.jpg')` }}
           >
             <Product
               product={product}
