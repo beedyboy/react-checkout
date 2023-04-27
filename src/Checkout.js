@@ -139,9 +139,25 @@ const Checkout = () => {
       }
     }
 
-    // save temp cart as cart
+    // set temp cart items as cart items
     setCartItems(updatedCartItems);
   };
+
+  // calculate subtotal/ order total
+  let cartTotal = 0;
+
+  cartItems.forEach((item) => {
+    cartTotal += item.quantity * item.price;
+  });
+
+  // check to see if order total reaches discount criteria
+  const discountApplied = cartTotal > 1000;
+
+  // calculate discount to be applied based on discount criteria
+  const discount = discountApplied ? cartTotal * 0.1 : 0;
+
+  // calculate total after discount is applied
+  const total = cartTotal - discount;
 
   return (
     <>
@@ -196,9 +212,9 @@ const Checkout = () => {
                 ))}
               </tbody>
             </table>
-            <p>Subtotal: $0</p>
-            <p>Discount: $0</p>
-            <p>Total: $0</p>
+            <p>Subtotal: ${cartTotal.toFixed(2)}</p>
+            {discountApplied && <p>Discount (10%): ${discount.toFixed(2)}</p>}
+            <p>Total: ${total.toFixed(2)}</p>
           </div>
         </>
       )}
