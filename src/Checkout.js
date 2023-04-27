@@ -2,17 +2,36 @@ import React, { useState, useEffect } from 'react';
 import { getProducts } from './api';
 import LoadingIcon from './LoadingIcon';
 
-const Product = ({ product, addProductToCart, removeFromCart }) => {
+const Product = ({
+  product,
+  addProductToCart,
+  removeProductFromCart,
+  cartItems,
+}) => {
+  const [quantity, setQuantity] = useState(0);
+
+  useEffect(() => {
+    const cartItem = cartItems.find((item) => item.id === product.id);
+    if (cartItem) {
+      setQuantity(cartItem.quantity);
+    }
+  }, [cartItems, product]);
+
   return (
     <div className="product-card">
       <h2>{product.name}</h2>
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
       <p className="product-quantity">
-        <button onClick={addProductToCart}>Add</button>
+        <button
+          disabled={quantity >= product.quantity ? true : false}
+          onClick={() => addProductToCart(product.id)}
+        >
+          Add
+        </button>
         Quantity:
         <span>{product.quantity}</span>
-        <button onClick={removeFromCart}>Remove</button>
+        <button onClick={removeProductFromCart}>Remove</button>
       </p>
     </div>
   );
@@ -22,6 +41,7 @@ export const ProductList = ({
   products,
   addProductToCart,
   removeProductFromCart,
+  cartItems,
 }) => {
   return (
     <div>
@@ -30,7 +50,12 @@ export const ProductList = ({
       <div className="card-container">
         {products.map((product) => (
           <div key={product.id} className="card">
-            <Product product={product} />
+            <Product
+              product={product}
+              addProductToCart={addProductToCart}
+              removeProductFromCart={removeProductFromCart}
+              cartItems={cartItems}
+            />
           </div>
         ))}
       </div>
@@ -108,6 +133,7 @@ const Checkout = () => {
               products={products}
               addProductToCart={addProductToCart}
               removeProductFromCart={removeProductFromCart}
+              cartItems={cartItems}
             />
           </div>
           <div className="checkout-grid">
