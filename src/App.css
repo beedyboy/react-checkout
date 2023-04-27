@@ -91,6 +91,10 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+button{
+  cursor: pointer;
+}
      
 @media only screen and (max-width: 768px) {
   .App {
