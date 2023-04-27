@@ -136,7 +136,7 @@ const Checkout = () => {
                         +
                       </button>
                     </td>
-                    <td>${item.price}</td>
+                    <td>${item.total}</td>
                   </tr>
                 ))}
               </tbody>
