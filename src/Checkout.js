@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { getProducts } from "./api";
 import LoadingIcon from "./LoadingIcon";
 
-const Product = ({ product, addProductToCart, removeFromCart }) => {
+const Product = ({
+  product,
+  removeFromCart,
+  addProductToCart,
+}) => {
   return (
     <div className="product-card">
       <h2>{product.name}</h2>
@@ -18,14 +22,21 @@ const Product = ({ product, addProductToCart, removeFromCart }) => {
   );
 };
 
-export const ProductList = ({ products, addProductToCart, removeProductFromCart }) => {
+export const ProductList = ({
+  products,
+  addProductToCart,
+  removeProductFromCart,
+}) => {
   return (
     <div>
       <h1>Health Products</h1>
 
       <div className="card-container">
         {products.map((product) => (
-          <div key={product.id} className="card">
+          <div
+            key={product.id}
+            className="card"
+          >
             <Product product={product} />
           </div>
         ))}
@@ -35,6 +46,7 @@ export const ProductList = ({ products, addProductToCart, removeProductFromCart 
 };
 
 const Checkout = () => {
+  const [cart, setCart] = useState({});
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -50,7 +62,11 @@ const Checkout = () => {
   return (
     <>
       <div className="product-grid">
-        <ProductList products={products} addProductToCart={addProductToCart} removeProductFromCart={removeProductFromCart} />
+        <ProductList
+          products={products}
+          addProductToCart={addProductToCart}
+          removeProductFromCart={removeProductFromCart}
+        />
       </div>
       <div className="checkout-grid">
         <h1>Order Summary</h1>
