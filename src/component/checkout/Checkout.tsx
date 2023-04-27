@@ -17,9 +17,9 @@ enum ACTION {
 
 
 type Action = { type: ACTION.UPDATE_LOADING_STATE, payload: boolean }
-  | { type: ACTION.DECREASE_QUANTITY_IN_CART, payload: ProductInterface[] }
-  | { type: ACTION.INCREASE_QUANTITY_IN_CART, payload: ProductInterface[] }
-  | { type: ACTION.REMOVE_FROM_CART, payload: {cart:ProductInterface[]; products:ProductInterface[]} }
+  | { type: ACTION.DECREASE_QUANTITY_IN_CART, payload: {cart:ProductInterface[]; products:ProductInterface[]} }
+  | { type: ACTION.INCREASE_QUANTITY_IN_CART, payload: { cart: ProductInterface[]; products: ProductInterface[] } }
+  | { type: ACTION.REMOVE_FROM_CART, payload: { cart: ProductInterface[]; products: ProductInterface[] } }
   | { type: ACTION.ADD_TO_CART, payload: { cartItem: ProductInterface; products: ProductInterface[] } }
   | { type: ACTION.UPDATE_PRODUCTS, payload: ProductInterface[] }
   | { type: ACTION.UPDATE_QUANTITY_IN_CART, payload: { cart: ProductInterface[]; products: ProductInterface[] } }
@@ -41,9 +41,9 @@ const reducer = (state: AppState, action: Action): AppState => {
 
     case ACTION.REMOVE_FROM_CART:
       return {
-        ...state, 
+        ...state,
         cart: action.payload.cart,
-        products:action.payload.products
+        products: action.payload.products
       }
 
     case ACTION.UPDATE_PRODUCTS:
@@ -53,10 +53,10 @@ const reducer = (state: AppState, action: Action): AppState => {
       return { ...state, cart: action.payload.cart, products: action.payload.products }
 
     case ACTION.INCREASE_QUANTITY_IN_CART:
-      return { ...state, cart: action.payload }
+      return { ...state, cart: action.payload.cart, products:action.payload.products }
 
     case ACTION.DECREASE_QUANTITY_IN_CART:
-      return { ...state, cart: action.payload }
+      return { ...state, cart: action.payload.cart, products:action.payload.products }
 
     case ACTION.UPDATE_LOADING_STATE:
       return { ...state, loading: action.payload }
@@ -204,7 +204,7 @@ const Checkout: FC = () => {
 
   };
 
-  const removeProductFromCart = (productId: number) => { 
+  const removeProductFromCart = (productId: number) => {
     if (state.cart.length === 0) {
       return alert("Cart is Empty")
     }
@@ -229,7 +229,7 @@ const Checkout: FC = () => {
           quantityRemaining: productItem.item.quantity
         }
       }
-      return dispatch({ type: ACTION.REMOVE_FROM_CART, payload: {cart:newCart,  products:state.products} })
+      return dispatch({ type: ACTION.REMOVE_FROM_CART, payload: { cart: newCart, products: state.products } })
     }
 
   };
@@ -238,6 +238,7 @@ const Checkout: FC = () => {
   const addProductQuanityHandler = (productId: number) => {
     const productInCart: ProductInterface | undefined = state.cart.find((e: ProductInterface) => e.id === productId)
     const itemIndex = state.cart.findIndex((e: ProductInterface) => e.id === productId);
+    const productItem = getProductItemById(productId);
 
     if (productInCart) {
       state.cart[itemIndex] = {
@@ -245,10 +246,23 @@ const Checkout: FC = () => {
         description: productInCart?.description,
         name: productInCart?.name,
         price: productInCart.price,
-        quantity: productInCart.quantity - 1 < 0 ? 0 : productInCart.quantity - 1,
+        quantity: productInCart.quantity,
         currentQuantity: productInCart.currentQuantity + 1 > productInCart.quantity ? productInCart.quantity : productInCart.currentQuantity + 1,
       }
-      return dispatch({ type: ACTION.INCREASE_QUANTITY_IN_CART, payload: state.cart })
+
+      if (productItem.item) {
+        state.products[productItem.index] = {
+          id: productItem.item.id,
+          description: productItem.item.description,
+          name: productItem.item.name,
+          price: productItem.item.price,
+          quantity: productItem.item.quantity,
+          currentQuantity: productInCart.currentQuantity + 1 > productInCart.quantity ? productInCart.quantity : productInCart.currentQuantity + 1,
+          quantityRemaining: productItem.item.quantityRemaining ? (productItem.item.quantityRemaining - 1 < 0 ? 0 : productItem.item.quantityRemaining - 1) : 0
+        }
+      }
+
+      return dispatch({ type: ACTION.INCREASE_QUANTITY_IN_CART, payload: { cart: state.cart, products: state.products } })
     }
   }
 
@@ -256,6 +270,8 @@ const Checkout: FC = () => {
   const reduceProductQuantityHandler = (productId: number) => {
     const productInCart: ProductInterface | undefined = state.cart.find((e: ProductInterface) => e.id === productId)
     const itemIndex = state.cart.findIndex((e: ProductInterface) => e.id === productId);
+    const productItem = getProductItemById(productId);
+
     if (productInCart) {
       state.cart[itemIndex] = {
         id: productInCart?.id,
@@ -265,7 +281,19 @@ const Checkout: FC = () => {
         quantity: productInCart.quantity,
         currentQuantity: productInCart.currentQuantity - 1 < 0 ? 0 : productInCart.currentQuantity - 1,
       }
-      return dispatch({ type: ACTION.DECREASE_QUANTITY_IN_CART, payload: state.cart })
+
+      if (productItem.item) {
+        state.products[productItem.index] = {
+          id: productItem.item.id,
+          description: productItem.item.description,
+          name: productItem.item.name,
+          price: productItem.item.price,
+          quantity: productItem.item.quantity,
+          currentQuantity: productInCart.currentQuantity + 1 > productInCart.quantity ? productInCart.quantity : productInCart.currentQuantity + 1,
+          quantityRemaining: productItem.item.quantityRemaining ? (productItem.item.quantityRemaining + 1 > productInCart.quantity ? productInCart.quantity : productItem.item.quantityRemaining + 1) : 0
+        }
+      }
+      return dispatch({ type: ACTION.DECREASE_QUANTITY_IN_CART, payload: {cart:state.cart, products:state.products} })
     }
   }
 
@@ -301,7 +329,6 @@ const Checkout: FC = () => {
 
   return (
     <>
-
       <div className="product-grid">
         {state.loading ? (
           <LoadingIcon isLoading={state.loading} />
