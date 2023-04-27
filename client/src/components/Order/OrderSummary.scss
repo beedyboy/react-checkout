@@ -1,0 +1,142 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.order-summary {
+  background: $pri-color-1;
+  width: 100%;
+  border-radius: 10px 0 0 0;
+  padding: 10px;
+  margin-left: 0;
+  transition: all 0.5s ease-out;
+  max-width: 500px;
+
+  &.show {
+    margin-left: 460px;
+    transition: all 0.5s ease-out
+  }
+
+  > div {
+    &:nth-of-type(1) {
+
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        
+        > div {
+          position: relative;
+          
+          span {
+            @include font-stack(0.9rem, 500, 24px);
+            @include position(absolute, -10px, unset, -10px, unset);
+            @include display(row, center, center);
+  
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            color: #fff;
+          }
+        }
+
+    }
+
+    &:nth-of-type(2) {
+        margin-top: 20px;
+
+        p {
+            @include display(row, space-between, center);
+            @include font-stack(0.8rem, 500, 24px);
+
+            color: $dark;
+
+            span {
+                &:nth-of-type(2) {
+                    @include font-stack(0.9rem, 800, 24px);
+                }
+            }
+        }
+    }
+  }
+
+  .no-items {
+    @include font-stack(1.2rem, 600, 24px);
+  }
+
+  > button {
+    @include font-stack(0.9rem, 500, 24px);
+
+    border: none;
+    padding: 8px 1rem;
+    border-radius: 5px;
+    background: $acc-color-2;
+    color: #fff;
+    width: 100%;
+    margin-top: 10px;
+
+    &:hover {
+      background: $acc-color-1;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.2
+    }
+  }
+
+  > h2 {
+    @include font-stack(1.1rem, 500, 24px);
+
+    margin-bottom: 2rem;
+    border-bottom: solid 3px $dark;
+    width: fit-content;
+    color: $dark;
+    text-align: center;
+  }
+
+  .order-summary-table {
+    width: 100%;
+  }
+
+  .order-summary-table th,
+  .order-summary-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center
+  }
+
+  .order-summary-table th {
+    @include font-stack(0.8rem, 700, 24px);
+
+    background-color: transparent;
+  }
+
+  .order-summary-table td {
+    @include font-stack(0.7rem, 500, 24px);
+
+    background: #fff;
+    padding: 5px;
+    text-align: center;
+
+    &.btn-cell {
+        @include display(row, center, center);
+
+        gap: 5px;
+
+        button {
+            @include font-stack(1.2rem, 500, 24px);
+
+            padding: 2px 20px;
+            background: $dark;
+            color: #fff;
+
+            &:disabled {
+              background: $dark;
+              color: #fff;
+              cursor: not-allowed;
+              opacity: 0.2
+            }
+        }
+    }
+  }
+
+}

@@ -1,0 +1,33 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.not-found {
+    @include display(column, unset, center);
+  
+    background: $pri-color-5;
+    min-height: 100vh;
+    padding-top: 7rem;
+  
+    img {
+      height: 350px;
+    }
+  
+    h3 {
+      @include font-stack(40px, 600, 32px);
+  
+      color: $dark;
+      margin-bottom: 2rem;
+    }
+  
+    a {
+      @include font-stack(1.3rem, 400, 24px);
+      @include display(row, center, center);
+  
+      background: $acc-color-2;
+      width: 250px;
+      height: 60px;
+      border-radius: 5px;
+      color: #fff;
+      margin-top: 3rem;
+    }
+  }

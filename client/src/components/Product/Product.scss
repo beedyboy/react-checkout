@@ -1,0 +1,135 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+main.checkout {
+  @include display(row, unset, unset);
+
+  padding: 0.9rem 0 0 3rem;
+  gap: 20px;
+}
+
+.product-list {
+  @include display(column, unset, unset);
+
+  margin-bottom: 20px;
+
+  > h2 {
+    @include font-stack(1.1rem, 500, 24px);
+
+    margin-bottom: 2rem;
+    border-bottom: solid 3px $dark;
+    width: fit-content;
+    color: $dark;
+  }
+
+  .card-container {
+    @include display-grid(repeat(4, 1fr), 20px);
+
+    flex-wrap: wrap;
+
+    .card {
+      @include display(column, flex-end, center);
+
+      padding: 3px;
+      padding-bottom: 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      height: 15rem;
+
+      .product-card {
+        @include display(column, unset, center);
+
+        border: 1px solid #ccc;
+        padding: 1.8rem 10px 10px;
+        border-radius: 13px 13px 0 0;
+        background: #fff;
+        height: 13rem;
+        width: 100%;
+        text-align: center;
+        color: $dark;
+
+        > h2 {
+          @include font-stack(1rem, 700, 24px);
+
+          text-transform: uppercase;
+          margin-bottom: 0.3rem;
+        }
+
+        > p {
+          &:nth-of-type(1) {
+            @include font-stack(0.9rem, 500, 24px);
+          }
+
+          &:nth-of-type(2) {
+            @include font-stack(0.7rem, 500, 24px);
+
+            span {
+              @include font-stack(0.8rem, 800, 24px);
+            }
+          }
+
+          &:nth-of-type(3) {
+            @include font-stack(0.8rem, 500, 24px);
+          }
+        }
+
+        > div {
+          @include display(row, unset, center);
+
+          gap: 20px;
+          margin-top: 10px;
+
+          > button {
+            @include font-stack(0.8rem, 500, 24px);
+            border: none;
+            padding: 8px 1rem;
+            border-radius: 5px;
+            background: $acc-color-2;
+            color: #fff;
+
+            &:hover {
+              background: $acc-color-1;
+            }
+
+            &:nth-of-type(2) {
+              background: transparent;
+              border: solid 2px rgb(248, 136, 136);
+              color: rgb(248, 136, 136);
+              padding: 8px 0.8rem;
+
+              &:hover {
+                background: rgb(247, 95, 95);
+                border: solid 2px rgb(247, 95, 95);
+                color: #fff;
+              }
+            }
+
+            &:disabled {
+              background: rgb(247, 95, 95);
+              color: #fff;
+              cursor: not-allowed;
+              opacity: 0.2
+            }
+          }
+
+          > p {
+            @include font-stack(0.8rem, 500, 24px);
+
+            color: $dark;
+            span {
+              @include font-stack(0.9rem, 800, 24px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  @include display(row, center, center);
+  @include font-stack(0.7rem, 500, 1rem);
+
+  background: $pri-color-5;
+  padding: 10px;
+}

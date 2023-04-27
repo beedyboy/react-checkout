@@ -3,13 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/react": "^18.0.35",
-    "@types/react-dom": "^18.0.11",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.16.1",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
     "cra-template": "1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^3.3.1"
+    "react-transition-group": "^4.4.5",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.4",
+    "web-vitals": "^3.3.1",
+    "zustand": "^4.3.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/react-transition-group": "^4.4.5"
   }
 }
