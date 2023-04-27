@@ -19,7 +19,7 @@ enum ACTION {
 type Action = { type: ACTION.UPDATE_LOADING_STATE, payload: boolean }
   | { type: ACTION.DECREASE_QUANTITY_IN_CART, payload: ProductInterface[] }
   | { type: ACTION.INCREASE_QUANTITY_IN_CART, payload: ProductInterface[] }
-  | { type: ACTION.REMOVE_FROM_CART, payload: ProductInterface[] }
+  | { type: ACTION.REMOVE_FROM_CART, payload: {cart:ProductInterface[]; products:ProductInterface[]} }
   | { type: ACTION.ADD_TO_CART, payload: { cartItem: ProductInterface; products: ProductInterface[] } }
   | { type: ACTION.UPDATE_PRODUCTS, payload: ProductInterface[] }
   | { type: ACTION.UPDATE_QUANTITY_IN_CART, payload: { cart: ProductInterface[]; products: ProductInterface[] } }
@@ -41,14 +41,15 @@ const reducer = (state: AppState, action: Action): AppState => {
 
     case ACTION.REMOVE_FROM_CART:
       return {
-        ...state, cart: action.payload
+        ...state, 
+        cart: action.payload.cart,
+        products:action.payload.products
       }
 
     case ACTION.UPDATE_PRODUCTS:
       return { ...state, products: action.payload }
 
     case ACTION.UPDATE_QUANTITY_IN_CART:
-      console.log("2", state.products[0])
       return { ...state, cart: action.payload.cart, products: action.payload.products }
 
     case ACTION.INCREASE_QUANTITY_IN_CART:
@@ -203,7 +204,7 @@ const Checkout: FC = () => {
 
   };
 
-  const removeProductFromCart = (productId: number) => {
+  const removeProductFromCart = (productId: number) => { 
     if (state.cart.length === 0) {
       return alert("Cart is Empty")
     }
@@ -214,9 +215,21 @@ const Checkout: FC = () => {
       return alert(`product ${productId} is not in your order list`)
     }
 
+    const productItem = getProductItemById(productId);
     if (productToRemove) {
       let newCart: ProductInterface[] = state.cart.filter((el) => el.id !== productToRemove.id)
-      return dispatch({ type: ACTION.REMOVE_FROM_CART, payload: newCart })
+      if (productItem.item) {
+        state.products[productItem.index] = {
+          id: productItem.item.id,
+          description: productItem.item.description,
+          name: productItem.item.name,
+          price: productItem.item.price,
+          quantity: productItem.item.quantity,
+          currentQuantity: 0,
+          quantityRemaining: productItem.item.quantity
+        }
+      }
+      return dispatch({ type: ACTION.REMOVE_FROM_CART, payload: {cart:newCart,  products:state.products} })
     }
 
   };
