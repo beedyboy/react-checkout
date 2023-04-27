@@ -1,8 +1,20 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, waitFor } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders order summary title text", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/order summary/i);
+  expect(titleElement).toBeInTheDocument();
+});
+
+test("renders products list", async () => {
+  render(<App />);
+
+  await waitFor(
+    () => {
+      const productCard = screen.getByText(/product/i);
+      expect(productCard).toBeInTheDocument();
+    },
+    { timeout: 4000 }
+  );
 });
