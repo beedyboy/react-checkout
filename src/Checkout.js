@@ -7,6 +7,10 @@ const Product = ({
   removeFromCart,
   addProductToCart,
 }) => {
+  const [quantity, setQuantity] = useState(
+    cart[product.id] || 0
+  );
+
   return (
     <div className="product-card">
       <h2>{product.name}</h2>
