@@ -30,7 +30,7 @@ const Product = ({
     <div className="product-card">
       <h2>{product.name}</h2>
       <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
+      <p>Price: ${product.price.toFixed(2)}</p>
       <p className="product-quantity">
         <button
           onClick={handleAddToCart}
@@ -39,7 +39,7 @@ const Product = ({
           Add
         </button>
         Quantity:
-        <span>{product.quantity}</span>
+        <span>{quantity}</span>
         <button
           onClick={handleRemoveFromCart}
           disabled={isRemoveDisabled}
@@ -47,6 +47,7 @@ const Product = ({
           Remove
         </button>
       </p>
+      <p>Total: ${product.price * quantity.toFixed(2)}</p>
     </div>
   );
 };
