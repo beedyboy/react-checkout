@@ -118,7 +118,26 @@ const Checkout = () => {
     setCartItems(updatedCartItems);
   };
 
-  const removeProductFromCart = (productId) => {};
+  const removeProductFromCart = (productId) => {
+    // store cartitems in temp-cart variable
+    const updatedCartItems = [...cartItems];
+
+    // search for index of item in cart
+    const itemIndex = updatedCartItems.findIndex(
+      (item) => item.id === productId
+    );
+
+    // use index from the previous step to find item and reduce it's quantity
+    if (itemIndex > -1) {
+      if (updatedCartItems[itemIndex].quantity) {
+        updatedCartItems[itemIndex].quantity--;
+      }
+    }
+
+    // save temp cart as cart
+    setCartItems(updatedCartItems);
+  };
+
   return (
     <>
       {isLoading ? (
