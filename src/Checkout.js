@@ -65,7 +65,19 @@ const Checkout = () => {
     });
   };
 
-  const removeProductFromCart = (productId) => {};
+  const removeProductFromCart = (productId) => {
+    setCart((prevCart) => {
+      const newCart = { ...prevCart };
+      if (newCart[productId] > 0) {
+        newCart[productId] -= 1;
+      }
+      if (newCart[productId] === 0) {
+        delete newCart[productId];
+      }
+      return newCart;
+    });
+  };
+
   return (
     <>
       <div className="product-grid">
