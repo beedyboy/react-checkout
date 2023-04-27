@@ -11,7 +11,7 @@ const Product: FC<{ product: ProductInterface; addProductToCart: Function; remov
             <p className="product-quantity">
                 <button onClick={() => addProductToCart(product.id)} >Add</button>
                 Quantity:
-                <span>{product.quantity}</span>
+                <span>{product.quantityRemaining}</span>
                 <button onClick={() => removeFromCart(product.id)} >Remove</button>
             </p>
         </div>
