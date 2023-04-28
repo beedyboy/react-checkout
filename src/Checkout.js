@@ -1,6 +1,6 @@
 import { getProducts } from "./api/api";
-import LoadingIcon from "./LoadingIcon";
 import React, { useState, useEffect } from "react";
+import LoadingIcon from "./components/LoadingIcon/LoadingIcon";
 
 const Product = ({
   cart,
