@@ -81,6 +81,7 @@ const Checkout = () => {
                 <td>${item.price}</td>
                 <td>
                   <button
+                    disabled={item.quantity === 1}
                     type="button"
                     onClick={() => {
                       decrease(item);

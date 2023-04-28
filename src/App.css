@@ -69,7 +69,9 @@
   border-collapse: collapse;
   margin: auto;
 }
-
+button:disabled{
+  cursor: not-allowed !important;
+}
 .order-summary-table th,
 .order-summary-table td {
   padding: 8px;
