@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import Checkout from "./Checkout";
+import Checkout from "../../Checkout";
 
 function App() {
   return (
-    <div className="App"> 
-        <Checkout /> 
+    <div className="App">
+      <Checkout />
     </div>
   );
 }
