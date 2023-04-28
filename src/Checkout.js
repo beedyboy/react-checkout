@@ -91,6 +91,7 @@ const Checkout = () => {
     (async () => {
       const data = await getProducts();
       setProducts(data);
+      setIsLoading(false);
     })();
   }, []);
 
@@ -128,62 +129,70 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="product-grid">
-        <ProductList
-          cart={cart}
-          products={products}
-          addProductToCart={addProductToCart}
-          removeProductFromCart={removeProductFromCart}
-        />
-      </div>
-      <div className="checkout-grid">
-        <h1>Order Summary</h1>
-        <table className="order-summary-table">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.keys(cart).map((productId) => {
-              const product = products.find(
-                (p) => p.id === parseInt(productId)
-              );
-              const quantity = cart[productId];
-              return (
-                <tr key={productId}>
-                  <td>{product.name}</td>
-                  <td>${product.price.toFixed(2)}</td>
-                  <td>
-                    <button
-                      onClick={() =>
-                        removeProductFromCart(productId)
-                      }
-                    >
-                      -
-                    </button>
-                    {quantity}
-                    <button
-                      onClick={() => addProductToCart(productId)}
-                    >
-                      +
-                    </button>
-                  </td>
-                  <td>
-                    ${(product.price * quantity).toFixed(2)}
-                  </td>
+      {isLoading ? (
+        <LoadingIcon />
+      ) : (
+        <>
+          <div className="product-grid">
+            <ProductList
+              cart={cart}
+              products={products}
+              addProductToCart={addProductToCart}
+              removeProductFromCart={removeProductFromCart}
+            />
+          </div>
+          <div className="checkout-grid">
+            <h1>Order Summary</h1>
+            <table className="order-summary-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <p>Subtotal: ${cartSubtotal.toFixed(2)}</p>
-        <p>Discount: ${discount.toFixed(2)}</p>
-        <p>Total: ${total.toFixed(2)}</p>
-      </div>
+              </thead>
+              <tbody>
+                {Object.keys(cart).map((productId) => {
+                  const product = products.find(
+                    (p) => p.id === parseInt(productId)
+                  );
+                  const quantity = cart[productId];
+                  return (
+                    <tr key={productId}>
+                      <td>{product.name}</td>
+                      <td>${product.price.toFixed(2)}</td>
+                      <td>
+                        <button
+                          onClick={() =>
+                            removeProductFromCart(productId)
+                          }
+                        >
+                          -
+                        </button>
+                        {quantity}
+                        <button
+                          onClick={() =>
+                            addProductToCart(productId)
+                          }
+                        >
+                          +
+                        </button>
+                      </td>
+                      <td>
+                        ${(product.price * quantity).toFixed(2)}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            <p>Subtotal: ${cartSubtotal.toFixed(2)}</p>
+            <p>Discount: ${discount.toFixed(2)}</p>
+            <p>Total: ${total.toFixed(2)}</p>
+          </div>
+        </>
+      )}
     </>
   );
 };
