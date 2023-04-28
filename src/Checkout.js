@@ -148,18 +148,36 @@ const Checkout = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((item) => (
-              <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>${item.price}</td>
-                <td>
-                  <button>-</button>
-                  {item.quantity}
-                  <button>+</button>
-                </td>
-                <td>${item.price}</td>
-              </tr>
-            ))}
+            {Object.keys(cart).map((productId) => {
+              const product = products.find(
+                (p) => p.id === parseInt(productId)
+              );
+              const quantity = cart[productId];
+              return (
+                <tr key={productId}>
+                  <td>{product.name}</td>
+                  <td>${product.price.toFixed(2)}</td>
+                  <td>
+                    <button
+                      onClick={() =>
+                        removeProductFromCart(productId)
+                      }
+                    >
+                      -
+                    </button>
+                    {quantity}
+                    <button
+                      onClick={() => addProductToCart(productId)}
+                    >
+                      +
+                    </button>
+                  </td>
+                  <td>
+                    ${(product.price * quantity).toFixed(2)}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
         <p>Subtotal: ${cartSubtotal.toFixed(2)}</p>
