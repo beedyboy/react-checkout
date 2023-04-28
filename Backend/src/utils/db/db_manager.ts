@@ -2,7 +2,6 @@ import mongoose from 'mongoose';
 import logger from '../logging/logger';
 
 export default class DB {
-
   private uri: string;
   private db!: mongoose.Connection;
 
@@ -10,7 +9,7 @@ export default class DB {
     this.uri = uri;
   }
 
-  private async connect() {
+  public async connect() {
     await mongoose.connect(this.uri);
 
     this.db = mongoose.connection;
@@ -26,7 +25,6 @@ export default class DB {
   }
 
   public connection() {
-    this.connect();
     return this.db;
   }
 }
