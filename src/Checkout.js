@@ -48,7 +48,7 @@ const Product = ({
           Remove
         </button>
       </p>
-      <p>Total: ${product.price * quantity.toFixed(2)}</p>
+      <p>Total: ${(product.price * quantity).toFixed(2)}</p>
     </div>
   );
 };
@@ -115,6 +115,17 @@ const Checkout = () => {
     });
   };
 
+  const cartSubtotal = Object.keys(cart).reduce(
+    (acc, productId) =>
+      acc +
+      products.find((p) => p.id === parseInt(productId)).price *
+        cart[productId],
+    0
+  );
+
+  const discount = cartSubtotal > 1000 ? cartSubtotal * 0.1 : 0;
+  const total = cartSubtotal - discount;
+
   return (
     <>
       <div className="product-grid">
@@ -151,9 +162,9 @@ const Checkout = () => {
             ))}
           </tbody>
         </table>
-        <p>Subtotal: $0</p>
-        <p>Discount: $0</p>
-        <p>Total: $0</p>
+        <p>Subtotal: ${cartSubtotal.toFixed(2)}</p>
+        <p>Discount: ${discount.toFixed(2)}</p>
+        <p>Total: ${total.toFixed(2)}</p>
       </div>
     </>
   );
