@@ -1,3 +1,7 @@
+import {
+  totalPrice,
+  addOrRemoveProductFromCart,
+} from "../../helpers/helpers";
 import { getProducts } from "../../api/api";
 import React, { useState, useEffect } from "react";
 import LoadingIcon from "../LoadingIcon/LoadingIcon";
@@ -17,37 +21,13 @@ const Checkout = () => {
     })();
   }, []);
 
-  const addProductToCart = (productId) => {
-    setCart((prevCart) => {
-      const newCart = { ...prevCart };
-      newCart[productId] = (newCart[productId] || 0) + 1;
-      return newCart;
-    });
-  };
+  const { addProductToCart, removeProductFromCart } =
+    addOrRemoveProductFromCart(setCart);
 
-  const removeProductFromCart = (productId) => {
-    setCart((prevCart) => {
-      const newCart = { ...prevCart };
-      if (newCart[productId] > 0) {
-        newCart[productId] -= 1;
-      }
-      if (newCart[productId] === 0) {
-        delete newCart[productId];
-      }
-      return newCart;
-    });
-  };
-
-  const cartSubtotal = Object.keys(cart).reduce(
-    (acc, productId) =>
-      acc +
-      products.find((p) => p.id === parseInt(productId)).price *
-        cart[productId],
-    0
+  const { cartSubtotal, discount, total } = totalPrice(
+    cart,
+    products
   );
-
-  const discount = cartSubtotal > 1000 ? cartSubtotal * 0.1 : 0;
-  const total = cartSubtotal - discount;
 
   return (
     <>
@@ -63,6 +43,7 @@ const Checkout = () => {
           <OrderSummary
             cart={cart}
             total={total}
+            products={products}
             discount={discount}
             cartSubtotal={cartSubtotal}
             addProductToCart={addProductToCart}

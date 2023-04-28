@@ -1,3 +1,5 @@
+import OrderTable from "../OrderTable/OrderTable";
+
 const OrderSummary = ({
   cart,
   total,
