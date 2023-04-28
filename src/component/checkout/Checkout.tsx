@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/cart-context";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Checkout = () => {
   const {
@@ -15,7 +15,6 @@ const Checkout = () => {
     removeProductFromCart,
   } = useContext(CartContext);
 
-
   const productTotal = (quantity: any, price: any) => {
     let _total: number = quantity * price;
     _total = parseFloat(_total.toFixed(2));
@@ -27,11 +26,37 @@ const Checkout = () => {
     let _total = parseFloat(value).toFixed(2);
     return _total;
   };
-  
-  const notify = (msg: string) => toast(msg);
+
+
+
+  const checkOutFunc = (itemCount: number) => {
+    if (itemCount === 0) {
+      toast.error('Please add Item(s)! to cart', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    } else {
+      toast.success('CheckOut Completed', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    }
+  };
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
       <div className="checkout-grid">
         <div className="checkout-head">
           <h1 className="checkout-title">Order Summary</h1>
@@ -63,12 +88,11 @@ const Checkout = () => {
                   >
                     -
                   </button>
-                  
+
                   {item.quantity}
                   <button
                     onClick={() => {
                       increase(item);
-
                     }}
                   >
                     +
@@ -90,7 +114,7 @@ const Checkout = () => {
           </tbody>
         </table>
         <div className="total-stn">
-        <p className="sub-total">Item Count : {itemCount}</p>
+          <p className="sub-total">Item Count : {itemCount}</p>
           <p className="sub-total">Subtotal : ${totalValue(subtotal)}</p>
           <p className="discount">
             {discount > 0 ? (
@@ -103,9 +127,14 @@ const Checkout = () => {
           <p className="total">Total : ${totalValue(total)}</p>
           <br></br>
           <br></br>
-          <button className="check-btn" onClick={() => {
-            notify("Check Out Successful")
-          }}>Check Out</button>
+          <button
+            className="check-btn"
+            onClick={() => {
+              checkOutFunc(itemCount);
+            }}
+          >
+            Check Out
+          </button>
         </div>
       </div>
     </>

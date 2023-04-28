@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 export interface ProductItem {
   id: number;
   name: string;
@@ -78,6 +80,7 @@ const cartReducer = (state: CartState, action: Action): CartState => {
           ...action.payload,
           quantity: 1,
         });
+        toast.success("Product added to cart");
       }
       return {
         ...state,
@@ -94,6 +97,7 @@ const cartReducer = (state: CartState, action: Action): CartState => {
       if (
         productdetail[0].quantity <= state.cartItems[increaseIndex].quantity
       ) {
+        toast.error("Maximum limit for this product reached");
         state.cartItems[increaseIndex].quantity = productdetail[0].quantity;
       }
 
@@ -110,6 +114,10 @@ const cartReducer = (state: CartState, action: Action): CartState => {
       if (product.quantity > 1) {
         product.quantity--;
       }
+      if (product.quantity === 1) {
+        toast.error("Quantity cannot be 0")
+        product.quantity = 1;
+      }
       return {
         ...state,
         ...sumItems(state.cartItems),
@@ -118,6 +126,7 @@ const cartReducer = (state: CartState, action: Action): CartState => {
       const newCartItems = state.cartItems.filter(
         (item) => item.id !== action.payload.id
       );
+      toast.error("Product removed cart")
       return {
         ...state,
         ...sumItems(newCartItems),

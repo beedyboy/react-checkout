@@ -3,12 +3,14 @@ import { ProductItem} from "../../types";
 import Product from "../product/Product";
 import { ApiContext } from "../../context/product-context";
 import LoadingIcon from "../loading-icon/LoadingIcon";
+import { ToastContainer , toast } from "react-toastify";
 
 export const ProductList = () => {
   const { data, isLoaded } = useContext(ApiContext);
 
   return (
     <div>
+      <ToastContainer />
       <div>
       <div className="checkout-head">
      <h1 className="checkout-title">Health Products</h1>
