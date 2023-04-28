@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
-import {  ProductProps } from "../../types";
+import { ProductProps } from "../../types";
 import { CartContext } from "../../context/cart-context";
-export const Product: React.FC<ProductProps> = ({ product }) => {
-  const {
-  
-    addProductToCart,
-  } = useContext(CartContext);
 
+export const Product: React.FC<ProductProps> = ({ product }) => {
+  const { addProductToCart, cartItems, removeProductFromCart } =
+    useContext(CartContext);
+
+  const isInCart = (product: any, cartItems: any[]) => {
+    return cartItems.find((item) => item.id === product.id);
+  };
   return (
     <div className="product-card" data-testid="addtocartbtn">
       <div className="card">
@@ -17,14 +19,25 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
           <p className="quantity">Quantity: {product.quantity}</p>
         </div>
         <p className="product-quantity">
-          <button
-            onClick={() => {
-              addProductToCart(product);
-            }}
-            id="addtocartbtn"
-          >
-            Add to cart
-          </button>
+          {!isInCart(product, cartItems) && (
+            <button
+              className="button is-black nomad-btn"
+              onClick={() => addProductToCart(product)}
+            >
+              ADD TO CART
+            </button>
+          )}
+          {isInCart(product, cartItems) && (
+            <button
+              className="button is-white nomad-btn"
+              id="btn-white-outline"
+              onClick={() => {
+                removeProductFromCart(product);
+              }}
+            >
+              REMOVE FROM CART
+            </button>
+          )}
         </p>
       </div>
     </div>

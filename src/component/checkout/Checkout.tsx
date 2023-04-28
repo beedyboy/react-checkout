@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/cart-context";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
   const {
     cartItems,
     subtotal,
     discount,
+    itemCount,
     total,
     increase,
     decrease,
@@ -24,9 +27,11 @@ const Checkout = () => {
     let _total = parseFloat(value).toFixed(2);
     return _total;
   };
-
+  
+  const notify = (msg: string) => toast(msg);
   return (
     <>
+    <ToastContainer />
       <div className="checkout-grid">
         <div className="checkout-head">
           <h1 className="checkout-title">Order Summary</h1>
@@ -58,10 +63,12 @@ const Checkout = () => {
                   >
                     -
                   </button>
+                  
                   {item.quantity}
                   <button
                     onClick={() => {
                       increase(item);
+
                     }}
                   >
                     +
@@ -75,7 +82,7 @@ const Checkout = () => {
                       removeProductFromCart(item);
                     }}
                   >
-                    remove
+                    x
                   </button>
                 </td>
               </tr>
@@ -83,7 +90,8 @@ const Checkout = () => {
           </tbody>
         </table>
         <div className="total-stn">
-          <p className="sub-total">Subtotal: ${totalValue(subtotal)}</p>
+        <p className="sub-total">Item Count : {itemCount}</p>
+          <p className="sub-total">Subtotal : ${totalValue(subtotal)}</p>
           <p className="discount">
             {discount > 0 ? (
               <p>
@@ -92,7 +100,12 @@ const Checkout = () => {
               </p>
             ) : null}
           </p>
-          <p className="total">Total: ${totalValue(total)}</p>
+          <p className="total">Total : ${totalValue(total)}</p>
+          <br></br>
+          <br></br>
+          <button className="check-btn" onClick={() => {
+            notify("Check Out Successful")
+          }}>Check Out</button>
         </div>
       </div>
     </>

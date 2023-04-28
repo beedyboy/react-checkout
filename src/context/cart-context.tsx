@@ -12,7 +12,6 @@ type CartContextType = {
   increase: (product: ProductItem) => void;
   decrease: (product: ProductItem) => void;
   removeProductFromCart: (product: ProductItem) => void;
-  // clearCart: () => void;
 };
 interface Props {
   children: ReactNode;

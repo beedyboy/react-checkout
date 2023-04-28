@@ -1,15 +1,14 @@
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
-import Checkout from "./component/checkout/Checkout";
-import ProductList from "./component/product-list/ProductList";
-
+import CheckOutPage from "./pages/CheckOutPage";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={ProductList}></Route>
-        <Route path="/checkout" component={Checkout}></Route>
+        <Route exact path="/" component={ProductPage}></Route>
+        <Route path="/checkout" component={CheckOutPage}></Route>
       </Switch>
     </div>
   );
