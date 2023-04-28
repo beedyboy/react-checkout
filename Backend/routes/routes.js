@@ -7,6 +7,6 @@ routemanager.get('/', productControls.getAllProducts);
 
 routemanager.post('/addProducts', productControls.addProducts);
 
-routemanager.get('/cart', productControls.getCart);
+// routemanager.get('/cart', productControls.getCart);
 
 module.exports = { routemanager };

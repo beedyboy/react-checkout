@@ -29,9 +29,9 @@ const productControls = {
     }
   },
 
-  getCart: async (req, res) => {
-    res.send('cart');
-  },
+  // getCart: async (req, res) => {
+  //   res.send('cart');
+  // },
 };
 
 module.exports = { productControls };
