@@ -1,0 +1,384 @@
+2023-04-28 22:27:29 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:17:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:27:29 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:17:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:29:43 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:17:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:29:43 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:17:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:32:37 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:32:37 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:32:52 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:32:52 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:32:55 [31merror[39m: [31muncaughtException: write after end[39m
+[31mError: write after end[39m
+[31m    at writeAfterEnd (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:264:12)[39m
+[31m    at PassThrough.Writable.write (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:300:21)[39m
+[31m    at File.log (C:\Users\user\react-checkout\Backend\node_modules\winston\lib\winston\transports\file.js:185:34)[39m
+[31m    at ExceptionStream._write (C:\Users\user\react-checkout\Backend\node_modules\winston\lib\winston\exception-stream.js:48:29)[39m
+[31m    at doWrite (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:390:139)[39m
+[31m    at writeOrBuffer (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:381:5)[39m
+[31m    at ExceptionStream.Writable.write (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:302:11)[39m
+[31m    at DerivedLogger.ondata (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_readable.js:629:20)[39m
+[31m    at DerivedLogger.emit (node:events:525:35)[39m
+[31m    at DerivedLogger.emit (node:domain:489:12)[39m
+2023-04-28 22:34:51 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:20:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:34:51 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:20:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:36:16 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:21:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:36:16 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:21:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:42:03 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:42:03 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:43:54 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:43:54 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:44:11 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:44:11 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:44:34 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:44:34 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:44:49 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:44:49 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:50:53 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:50:53 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:50:56 [31merror[39m: [31muncaughtException: write after end[39m
+[31mError: write after end[39m
+[31m    at writeAfterEnd (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:264:12)[39m
+[31m    at PassThrough.Writable.write (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:300:21)[39m
+[31m    at File.log (C:\Users\user\react-checkout\Backend\node_modules\winston\lib\winston\transports\file.js:185:34)[39m
+[31m    at ExceptionStream._write (C:\Users\user\react-checkout\Backend\node_modules\winston\lib\winston\exception-stream.js:48:29)[39m
+[31m    at doWrite (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:390:139)[39m
+[31m    at writeOrBuffer (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:381:5)[39m
+[31m    at ExceptionStream.Writable.write (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_writable.js:302:11)[39m
+[31m    at DerivedLogger.ondata (C:\Users\user\react-checkout\Backend\node_modules\readable-stream\lib\_stream_readable.js:629:20)[39m
+[31m    at DerivedLogger.emit (node:events:525:35)[39m
+[31m    at DerivedLogger.emit (node:domain:489:12)[39m
+2023-04-28 22:51:42 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:51:42 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:54:56 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:54:56 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:56:22 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-28 22:56:22 [31merror[39m: [31muncaughtException: Cannot read properties of undefined (reading 'model')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'model')[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:18:57)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1126:14)[39m
+[31m    at Module.m._compile (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at Module._extensions..js (node:internal/modules/cjs/loader:1180:10)[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\user\react-checkout\Backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1004:32)[39m
+[31m    at Function.Module._load (node:internal/modules/cjs/loader:839:12)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
+[31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
+[31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m

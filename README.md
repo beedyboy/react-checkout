@@ -1,198 +1,70 @@
-<h1 align="center">Express Typescript Mongoose Boilerplate</h1>
+# Checkout Component Implementation
 
-<p align="center">
-  <a href="https://travis-ci.com/github/MrBrown6210/nodejs-express-mongoose-typescript-boilerplate">
-    <img src="https://travis-ci.com/MrBrown6210/nodejs-express-mongoose-typescript-boilerplate.svg?branch=main" alt="travis" />
-  </a>
-  <a href='https://coveralls.io/github/MrBrown6210/nodejs-express-mongoose-typescript-boilerplate?branch=main'>
-    <img src='https://coveralls.io/repos/github/MrBrown6210/nodejs-express-mongoose-typescript-boilerplate/badge.svg?branch=main' alt='Coverage Status' />
-  </a>
-  <a href="https://www.codacy.com/gh/MrBrown6210/nodejs-express-mongoose-typescript-boilerplate/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MrBrown6210/nodejs-express-mongoose-typescript-boilerplate&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/2fa9351c9741489ebf545d5407d9b7fd"/>
-  </a>
-  <a href="http://makeapullrequest.com">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PR" />
-  </a>
-  <br>
-  A boilerplate/starter project for quickly building RESTful APIs using Node.js, Express, and Mongoose.
-</p>
-The app comes with many built-in features, such as authentication using JWT, request validation, unit and integration tests, etc.
+This project contains a React application that allows customers to order health products through a web portal. The main feature of the application is a checkout component that allows customers to view available health products, add them to a cart, and review their order summary before checking out.
 
-## Quick Start
-Clone project to create your project, simply run:
-```bash
-git clone https://github.com/MrBrown6210/nodejs-express-mongoose-typescript-boilerplate.git <project-name>
-```
+## Requirements
 
-Set the environment variables:
-(You can see all enviroment key at **src/config/config**)
-```bash
-cp .env.example .env
-```
+To run this application, you will need:
 
-## Feature
--  **NoSQL database**:  [MongoDB](https://www.mongodb.com/)  object data modeling using  [Mongoose](https://mongoosejs.com/)
--   **Authentication and authorization**: using  [passport](http://www.passportjs.org/)
--   **Logging**: using  [winston](https://github.com/winstonjs/winston)  and  [morgan](https://github.com/expressjs/morgan)
--   **Testing**: unit and integration tests using  [Jest](https://jestjs.io/)
--   **Error handling**: centralized error handling mechanism
--   **Dependency management**: with  [Yarn](https://yarnpkg.com/)
--   **Environment variables**: using  [dotenv](https://github.com/motdotla/dotenv)
--   **Security**: set security HTTP headers using  [helmet](https://helmetjs.github.io/)
--   **Compression**: gzip compression with  [compression](https://github.com/expressjs/compression)
--   **Git hooks**: with  [husky](https://github.com/typicode/husky)  and  [lint-staged](https://github.com/okonet/lint-staged)
--   **Linting**: with  [ESLint](https://eslint.org/)  and  [Prettier](https://prettier.io/) (fixing)
--   **Editor config**: consistent editor configuration using  [EditorConfig](https://editorconfig.org/)
+- Node.js (version 14 or later)
+- NPM (version 6 or later)
 
-## Commands
-Running locally:
-```bash
-yarn dev
-```
-building:
-```bash
-yarn build
-```
-Running production (build before use):
-```bash
-yarn start
-```
+## Getting Started
 
-Testing:
-```bash
-# run all unit tests
-yarn test
+To get started with this project, follow these steps:
 
-# run all unit tests in watch mode
-yarn test:watch
-
-# run unit tests coverage
-yarn test:coverage
-
-# run all e2e tests
-yarn test:e2e
-
-# run all e2e tests in watch mode
-yarn test:e2e:watch
-```
-
-## Enviroment Variable
-The environment variables can be found and modified in the  `.env`  file. They come with these default values:
-
-```bash
-# Port number
-APP_PORT=9000
-
-# Prefix app path
-APP_PREFIX_PATH=/
-
-# JWT
-# JWT Secret
-JWT_SECRET=somerandomkeyherena
-# JWT Expire
-JWT_EXPIRE=1y
+1. Fork this GitHub [repository](https://github.com/beedyboy/react-checkout).
+2. Clone the forked repository to your local machine.
+3. Install the project dependencies by running `npm install`.
+4. Start the development server by running `npm start`.
+5. Open [http://localhost:3000](http://localhost:3000) in your web browser.
+6. Implement the requirements stated above.
+7. Commit your changes to the forked repository.
+8. Push the changes to the forked repository.
+9. Create a pull request to the original repository and make [@beedyboy](https://github.com/beedyboy) as a reviewer.
 
 
-# Database config
+## Functionality
 
-# If you want to use database URI with DB_URI
-DB_URI=mongodb://localhost:27017/Mocks
+The `<Checkout />` component provides the following functionality:
 
-# If you want to use seperate database URI
-DB_USER=root
-DB_USER_PWD=secret
-DB_HOST=localhost
-DB_NAME=conduit
-DB_PORT=27017
-```
+- Loads products using the provided `getProducts()` function.
+- Displays a loading icon until all the product data has been successfully loaded.
+- Renders each product object as a `<Product/>` component, passing in the necessary props.
+- Implements add to cart and remove from cart methods.
+- The add and remove buttons adjust the ordered quantity of each product.
+- The add and remove buttons are enabled/disabled to ensure that the ordered quantity can’t be negative and can’t exceed the available count for that product.
+- The total shown for each product is calculated based on the ordered quantity and the price.
+- Implements a cart functionality to adjust the cart items to display only products added to cart.
+- The total in the order summary is calculated.
+- For orders over $1000, applies a 10% discount to the order. Displays the discount text only if a discount has been applied.
+- The total reflects any discount that has been applied.
+- All dollar amounts are displayed to 2 decimal places.
 
-## Project Structure
-This project don't have **controllers** and **services** folders because we want to minimalized. If you want them, you can create it
-```bash
-src\
- |--config\         # Environment variables and configuration related things
- |--middlewares\    # Custom express middlewares
- |--models\         # Mongoose models (data layer)
- |--routes\         # Routes
- |--utils\          # Utility classes and functions
- |--app.js          # Express app
- |--index.js        # App entry point
-```
+## Evaluation Criteria
 
-## Error handling
-The app has a centralized error handling mechanism.
+The candidate will be evaluated based on the following criteria:
 
-Routes should try to catch the errors and forward them to the error handling middleware (by calling `next(e)`).
+- Correctness of implementation and adherence to the stated requirements.
+- Code quality, including modularity and organization.
+- Ability to write clear and concise code.
+- Use of React best practices.
+- Proper error handling and testing.
 
-```ts
-router.post('/login', async (req, res, next) => {
-	try {
-		const { email, password } = req.body
-		const user = await User.findOne({ email })
-		if (!user || !user.validPassword(password))
-		throw new ApiError(httpStatus.UNPROCESSABLE_ENTITY, 'Invalid email or password')
-		res.json(user.toAuthJSON())
-	} catch (e) {
-		next(e)
-	}
-})
-```
+## Senior Role Requirements
 
-The error handling middleware sends an error response, which has the following format:
-```json
-{
-  "code": 401,
-  "message": "Invalid email or password"
-}
-```
-When running in development mode, the error response also contains the error stack.
+If you are applying for a senior role, the following additional tasks are required:
 
-## Authentication
-To require authentication for certain routes, you can use the `authenticate` from passportjs
-```ts
-router.post('/', authenticate(['jwt'], { session:  false }), async (req, res, next) => {
-	try {
-		const store = new  Store(req.body.store)
-		await store.save()
-		res.json(store)
-	} catch (e) {
-		next(e)
-	}
-})
-```
+- Write tests using the tool of your choice.
+- Convert the app to TypeScript.
 
-## Logging
-Import the logger from  `src/config/logger.ts`. It is using the  [Winston](https://github.com/winstonjs/winston)  logging library.
+## Extra Tasks
 
-Logging should be done according to the following severity levels (ascending order from most important to least important):
-```ts
-import logger from '@/config/logger'
+Consider doing any of the senior role requirements, if you haven't already, or any of the following:
 
-logger.error('message'); // level 0
-logger.warn('message'); // level 1
-logger.info('message'); // level 2
-logger.http('message'); // level 3
-logger.verbose('message'); // level 4
-logger.debug('message'); // level 5
-```
-In production mode, only `info`, `warn`, and `error` logs will be printed to the console.
+- Create a backend in express or Nest.js app to return products and the frontend should consume accordingly.
+- Write your own Express server that serves the app.
 
-## Linting
-Linting is done using  [ESLint](https://eslint.org/)  and  [Prettier](https://prettier.io/).
+## Conclusion
 
-In this app, ESLint is configured to follow the  [Airbnb JavaScript style guide](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base)  with some modifications. It also extends  [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)  to turn off all rules that are unnecessary or might conflict with Prettier.
-
-To modify the ESLint configuration, update the  `.eslintrc.json`  file. To modify the Prettier configuration, update the  `.prettierrc.json`  file.
-
-To prevent a certain file or directory from being linted, add it to  `.eslintignore`  and  `.prettierignore`.
-
-To maintain a consistent coding style across different IDEs, the project contains  `.editorconfig`
-
-## Contributing
-Contributions are welcome! Please check out the  [contributing guide](https://github.com/MrBrown6210/nodejs-express-mongoose-typescript-boilerplate/blob/main/CONTRIBUTING.md).
-
-## Inspirations
-
--  **[hagopj13/node-express-boilerplate](https://github.com/hagopj13/node-express-boilerplate)**
-
-## License
-[MIT](https://github.com/MrBrown6210/nodejs-express-mongoose-typescript-boilerplate/blob/master/LICENSE)
+Thank you for your interest in this project! We look forward to seeing your implementation. If you have any questions, please don't hesitate to reach out.

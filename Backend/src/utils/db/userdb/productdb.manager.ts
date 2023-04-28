@@ -1,5 +1,6 @@
 import Product from './productdb.model';
-import ProductInterface from "./productdb.interface";
+import ProductDbInterface from './productdb.interface';
+import ProductInterface from '../../../modules/project/product.interface';
 
 // interface for the user query
 interface productQueryInterface {
@@ -9,9 +10,9 @@ interface productQueryInterface {
 // User CRUD operations module
 export default class ProductCRUD {
 
-  static async create(product: ProductInterface) {
-    const createdUser = await Product.create(product);
-    return createdUser;
+  static async create(product: ProductInterface): Promise<ProductDbInterface> {
+    const createdProduct = await Product.create(product);
+    return createdProduct;
   }
 
   static async readAll() {
@@ -31,8 +32,8 @@ export default class ProductCRUD {
     return updatedProduct;
   }
 
-  static async updateByQuery(query: productQueryInterface, user: ProductInterface) {
-  const updatedProduct = await Product.findOneAndUpdate(query, user, { new: true });
+  static async updateByQuery(query: productQueryInterface, product: ProductInterface) {
+  const updatedProduct = await Product.findOneAndUpdate(query, product, { new: true });
   return updatedProduct;
 }
 

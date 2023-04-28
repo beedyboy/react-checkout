@@ -10,13 +10,11 @@ export default class DB {
     this.uri = uri;
   }
 
-  public async connect() {
-    await mongoose.connect(this.uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+  private async connect() {
+    await mongoose.connect(this.uri);
 
     this.db = mongoose.connection;
+    console.log(this.db);
     this.db.on('error', (error) => {
       console.error(error);
       logger.error(error);
@@ -28,6 +26,7 @@ export default class DB {
   }
 
   public connection() {
+    this.connect();
     return this.db;
   }
 }

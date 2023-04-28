@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-interface ProductInterface extends Document {
+interface ProductDbInterface extends Document {
   _id?: string;
   name: string;
   description: string;
@@ -8,4 +8,4 @@ interface ProductInterface extends Document {
   quantity: number;
 }
 
-export default ProductInterface;
+export default ProductDbInterface;

@@ -3,12 +3,12 @@ import { createProduct } from "./project.service";
 import { InternalServerError } from "../../commons/error";
 import ProductCRUD from '../../utils/db/userdb/productdb.manager';
 
-class projectController {
+export default class projectController {
 
   static async createProduct(req: Request, res: Response) {
     try{
       const productPayload = req.body;
-      const newProduct = createProduct(productPayload);
+      const newProduct = await createProduct(productPayload);
       res.status(201).json({
         success: true,
         product: newProduct
