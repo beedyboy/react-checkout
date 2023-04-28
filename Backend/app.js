@@ -9,7 +9,7 @@ app.use(
   cors({
     credentials: true,
     origin: function (origin, callback) {
-      console.log(`Origin ${origin} is being granted CORS access`);
+      // console.log(`Origin ${origin} is being granted CORS access`);
       callback(null, true);
     },
   })
