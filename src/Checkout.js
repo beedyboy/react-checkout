@@ -5,8 +5,8 @@ import LoadingIcon from "./LoadingIcon";
 const Product = ({
   cart,
   product,
-  removeFromCart,
   addProductToCart,
+  removeProductFromCart,
 }) => {
   const [quantity, setQuantity] = useState(
     cart[product.id] || 0
@@ -18,7 +18,7 @@ const Product = ({
   };
 
   const handleRemoveFromCart = () => {
-    removeFromCart(product.id);
+    removeProductFromCart(product.id);
     setQuantity(quantity - 1);
   };
 
@@ -119,6 +119,7 @@ const Checkout = () => {
     <>
       <div className="product-grid">
         <ProductList
+          cart={cart}
           products={products}
           addProductToCart={addProductToCart}
           removeProductFromCart={removeProductFromCart}
