@@ -1,36 +1,7 @@
 import { getProducts } from "../../api/api";
 import React, { useState, useEffect } from "react";
 import LoadingIcon from "../LoadingIcon/LoadingIcon";
-import Product from "../Product/Product";
-
-export const ProductList = ({
-  cart,
-  products,
-  addProductToCart,
-  removeProductFromCart,
-}) => {
-  return (
-    <div>
-      <h1>Health Products</h1>
-
-      <div className="card-container">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="card"
-          >
-            <Product
-              cart={cart}
-              product={product}
-              addProductToCart={addProductToCart}
-              removeProductFromCart={removeProductFromCart}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+import ProductList from "../ProductList/ProductList";
 
 const Checkout = () => {
   const [cart, setCart] = useState({});
