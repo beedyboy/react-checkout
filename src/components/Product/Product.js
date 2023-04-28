@@ -2,7 +2,6 @@ import {
   disableButton,
   addOrRemoveFromCart,
 } from "../../helpers/helpers";
-import React, { useState } from "react";
 
 const Product = ({
   cart,
@@ -10,15 +9,9 @@ const Product = ({
   addProductToCart,
   removeProductFromCart,
 }) => {
-  const [quantity, setQuantity] = useState(
-    cart[product.id] || 0
-  );
-
   const { handleAddToCart, handleRemoveFromCart } =
     addOrRemoveFromCart(
       product,
-      quantity,
-      setQuantity,
       addProductToCart,
       removeProductFromCart
     );
@@ -41,7 +34,7 @@ const Product = ({
           Add
         </button>
         Quantity:
-        <span>{quantity}</span>
+        <span>{cart[product.id]}</span>
         <button
           onClick={handleRemoveFromCart}
           disabled={isRemoveDisabled}
@@ -49,7 +42,7 @@ const Product = ({
           Remove
         </button>
       </p>
-      <p>Total: ${(product.price * quantity).toFixed(2)}</p>
+      <p>Total: ${(product.price * product.id).toFixed(2)}</p>
     </div>
   );
 };

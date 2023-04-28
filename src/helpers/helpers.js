@@ -39,19 +39,13 @@ export const totalPrice = (cart, products) => {
 
 export const addOrRemoveFromCart = (
   product,
-  quantity,
-  setQuantity,
   addProductToCart,
   removeProductFromCart
 ) => {
-  const handleAddToCart = () => {
-    addProductToCart(product.id);
-    setQuantity(parseInt(quantity) + 1);
-  };
-  const handleRemoveFromCart = () => {
+  const handleAddToCart = () => addProductToCart(product.id);
+
+  const handleRemoveFromCart = () =>
     removeProductFromCart(product.id);
-    setQuantity(parseInt(quantity) - 1);
-  };
 
   return { handleAddToCart, handleRemoveFromCart };
 };

@@ -1,4 +1,5 @@
 import TableRow from "./TableRow";
+import TableHeader from "./TableHead";
 
 const OrderTable = ({
   cart,
