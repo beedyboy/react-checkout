@@ -76,13 +76,25 @@ const Checkout = () => {
 
   useEffect(() => {
     async function fetchData() {
+      // this is getting datat using the backend service I created
       try {
-        const data = await getProducts();
+        const response = await fetch('https://react-checkout.onrender.com');
+        const data = await response.json();
         setProducts(data);
         setIsloading(false);
       } catch (error) {
         console.log(error.message);
       }
+
+      // this the implementation of the get products function without using the backend service I created
+
+      // try {
+      //   const data = await getProducts();
+      //   setProducts(data);
+      //   setIsloading(false);
+      // } catch (error) {
+      //   console.log(error.message);
+      // }
     }
     fetchData();
   }, []);
