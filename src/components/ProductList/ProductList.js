@@ -7,23 +7,25 @@ const ProductList = ({
   removeProductFromCart,
 }) => {
   return (
-    <div>
-      <h1>Health Products</h1>
+    <div className="product-grid">
+      <div>
+        <h1>Health Products</h1>
 
-      <div className="card-container">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="card"
-          >
-            <Product
-              cart={cart}
-              product={product}
-              addProductToCart={addProductToCart}
-              removeProductFromCart={removeProductFromCart}
-            />
-          </div>
-        ))}
+        <div className="card-container">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="card"
+            >
+              <Product
+                cart={cart}
+                product={product}
+                addProductToCart={addProductToCart}
+                removeProductFromCart={removeProductFromCart}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

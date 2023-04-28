@@ -2,7 +2,7 @@ import { getProducts } from "../../api/api";
 import React, { useState, useEffect } from "react";
 import LoadingIcon from "../LoadingIcon/LoadingIcon";
 import ProductList from "../ProductList/ProductList";
-import OrderTable from "../OrderTable/OrderTable";
+import OrderSummary from "../OrderSummary/OrderSummary";
 
 const Checkout = () => {
   const [cart, setCart] = useState({});
@@ -54,26 +54,20 @@ const Checkout = () => {
       <LoadingIcon isLoading={isLoading} />
       {!isLoading && (
         <>
-          <div className="product-grid">
-            <ProductList
-              cart={cart}
-              products={products}
-              addProductToCart={addProductToCart}
-              removeProductFromCart={removeProductFromCart}
-            />
-          </div>
-          <div className="checkout-grid">
-            <h1>Order Summary</h1>
-            <OrderTable
-              cart={cart}
-              products={products}
-              addProductToCart={addProductToCart}
-              removeProductFromCart={removeProductFromCart}
-            />
-            <p>Subtotal: ${cartSubtotal.toFixed(2)}</p>
-            <p>Discount: ${discount.toFixed(2)}</p>
-            <p>Total: ${total.toFixed(2)}</p>
-          </div>
+          <ProductList
+            cart={cart}
+            products={products}
+            addProductToCart={addProductToCart}
+            removeProductFromCart={removeProductFromCart}
+          />
+          <OrderSummary
+            cart={cart}
+            total={total}
+            discount={discount}
+            cartSubtotal={cartSubtotal}
+            addProductToCart={addProductToCart}
+            removeProductFromCart={removeProductFromCart}
+          />
         </>
       )}
     </>
