@@ -1,6 +1,6 @@
-import { getProducts } from "./api/api";
+import { getProducts } from "../../api/api";
 import React, { useState, useEffect } from "react";
-import LoadingIcon from "./components/LoadingIcon/LoadingIcon";
+import LoadingIcon from "../LoadingIcon/LoadingIcon";
 
 const Product = ({
   cart,
@@ -129,9 +129,8 @@ const Checkout = () => {
 
   return (
     <>
-      {isLoading ? (
-        <LoadingIcon />
-      ) : (
+      <LoadingIcon isLoading={isLoading} />
+      {!isLoading && (
         <>
           <div className="product-grid">
             <ProductList
