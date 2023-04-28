@@ -85,13 +85,13 @@ export const ProductList = ({
 const Checkout = () => {
   const [cart, setCart] = useState({});
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchData() {
+    (async () => {
       const data = await getProducts();
       setProducts(data);
-    }
-    fetchData();
+    })();
   }, []);
 
   const addProductToCart = (productId) => {
