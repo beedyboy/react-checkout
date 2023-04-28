@@ -36,3 +36,31 @@ export const totalPrice = (cart, products) => {
 
   return { cartSubtotal, discount, total };
 };
+
+export const addOrRemoveFromCart = (
+  product,
+  quantity,
+  setQuantity,
+  addProductToCart,
+  removeProductFromCart
+) => {
+  const handleAddToCart = () => {
+    addProductToCart(product.id);
+    setQuantity(parseInt(quantity) + 1);
+  };
+  const handleRemoveFromCart = () => {
+    removeProductFromCart(product.id);
+    setQuantity(parseInt(quantity) - 1);
+  };
+
+  return { handleAddToCart, handleRemoveFromCart };
+};
+
+export const disableButton = (cart, product) => {
+  const isAddDisabled =
+    product.quantity === 0 ||
+    (cart[product.id] || 0) === product.quantity;
+  const isRemoveDisabled = (cart[product.id] || 0) === 0;
+
+  return { isAddDisabled, isRemoveDisabled };
+};

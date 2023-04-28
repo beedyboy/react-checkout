@@ -1,3 +1,7 @@
+import {
+  disableButton,
+  addOrRemoveFromCart,
+} from "../../helpers/helpers";
 import React, { useState } from "react";
 
 const Product = ({
@@ -10,20 +14,19 @@ const Product = ({
     cart[product.id] || 0
   );
 
-  const handleAddToCart = () => {
-    addProductToCart(product.id);
-    setQuantity(parseInt(quantity) + 1);
-  };
+  const { handleAddToCart, handleRemoveFromCart } =
+    addOrRemoveFromCart(
+      product,
+      quantity,
+      setQuantity,
+      addProductToCart,
+      removeProductFromCart
+    );
 
-  const handleRemoveFromCart = () => {
-    removeProductFromCart(product.id);
-    setQuantity(parseInt(quantity) - 1);
-  };
-
-  const isAddDisabled =
-    product.quantity === 0 ||
-    (cart[product.id] || 0) === product.quantity;
-  const isRemoveDisabled = (cart[product.id] || 0) === 0;
+  const { isAddDisabled, isRemoveDisabled } = disableButton(
+    cart,
+    product
+  );
 
   return (
     <div className="product-card">
