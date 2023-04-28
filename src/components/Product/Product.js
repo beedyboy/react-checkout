@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Product = ({
   cart,
@@ -12,12 +12,12 @@ const Product = ({
 
   const handleAddToCart = () => {
     addProductToCart(product.id);
-    setQuantity(quantity + 1);
+    setQuantity(parseInt(quantity) + 1);
   };
 
   const handleRemoveFromCart = () => {
     removeProductFromCart(product.id);
-    setQuantity(quantity - 1);
+    setQuantity(parseInt(quantity) - 1);
   };
 
   const isAddDisabled =
