@@ -1,28 +1,20 @@
+import { useContext } from "react";
 import Product from "../Product/Product";
+import { CheckoutContext } from "../../context/CheckoutContext";
 
-const ProductList = ({
-  cart,
-  products,
-  addProductToCart,
-  removeProductFromCart,
-}) => {
+const ProductList = () => {
+  const { state } = useContext(CheckoutContext);
   return (
     <div className="product-grid">
       <div>
         <h1>Health Products</h1>
-
         <div className="card-container">
-          {products.map((product) => (
+          {state.products.map((product) => (
             <div
               key={product.id}
               className="card"
             >
-              <Product
-                cart={cart}
-                product={product}
-                addProductToCart={addProductToCart}
-                removeProductFromCart={removeProductFromCart}
-              />
+              <Product product={product} />
             </div>
           ))}
         </div>

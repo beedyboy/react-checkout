@@ -2,13 +2,12 @@ import {
   disableButton,
   addOrRemoveFromCart,
 } from "../../helpers/helpers";
+import { useContext } from "react";
+import { CheckoutContext } from "../../context/CheckoutContext";
 
-const Product = ({
-  cart,
-  product,
-  addProductToCart,
-  removeProductFromCart,
-}) => {
+const Product = ({ product }) => {
+  const { state, addProductToCart, removeProductFromCart } =
+    useContext(CheckoutContext);
   const { handleAddToCart, handleRemoveFromCart } =
     addOrRemoveFromCart(
       product,
@@ -17,7 +16,7 @@ const Product = ({
     );
 
   const { isAddDisabled, isRemoveDisabled } = disableButton(
-    cart,
+    state.cart,
     product
   );
 
@@ -34,7 +33,7 @@ const Product = ({
           Add
         </button>
         Quantity:
-        <span>{cart[product.id]}</span>
+        <span>{state.cart[product.id] || 0}</span>
         <button
           onClick={handleRemoveFromCart}
           disabled={isRemoveDisabled}
@@ -42,7 +41,12 @@ const Product = ({
           Remove
         </button>
       </p>
-      <p>Total: ${(product.price * product.id).toFixed(2)}</p>
+      <p>
+        Total: $
+        {(product.price * state.cart[product.id] || 0).toFixed(
+          2
+        )}
+      </p>
     </div>
   );
 };

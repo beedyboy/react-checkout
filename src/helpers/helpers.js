@@ -1,22 +1,32 @@
-export const addOrRemoveProductFromCart = (setCart) => {
+import CHECKOUT_ACTIONS from "../constant/objectConstant";
+
+export const addOrRemoveProductFromCart = (state, dispatch) => {
   const addProductToCart = (productId) => {
-    setCart((prevCart) => {
-      const newCart = { ...prevCart };
-      newCart[productId] = (newCart[productId] || 0) + 1;
-      return newCart;
+    dispatch({
+      type: CHECKOUT_ACTIONS.CART_ADD,
+      payload: (() => {
+        const cart = state.cart;
+        const newCart = { ...cart };
+        newCart[productId] = (newCart[productId] || 0) + 1;
+        return newCart;
+      })(),
     });
   };
 
   const removeProductFromCart = (productId) => {
-    setCart((prevCart) => {
-      const newCart = { ...prevCart };
-      if (newCart[productId] > 0) {
-        newCart[productId] -= 1;
-      }
-      if (newCart[productId] === 0) {
-        delete newCart[productId];
-      }
-      return newCart;
+    dispatch({
+      type: CHECKOUT_ACTIONS.CART_REMOVE,
+      payload: (() => {
+        const cart = state.cart;
+        const newCart = { ...cart };
+        if (newCart[productId] > 0) {
+          newCart[productId] -= 1;
+        }
+        if (newCart[productId] === 0) {
+          delete newCart[productId];
+        }
+        return newCart;
+      })(),
     });
   };
 
@@ -53,7 +63,7 @@ export const addOrRemoveFromCart = (
 export const disableButton = (cart, product) => {
   const isAddDisabled =
     product.quantity === 0 ||
-    (cart[product.id] || 0) === product.quantity;
+    (cart[product.id] || 0) >= product.quantity;
   const isRemoveDisabled = (cart[product.id] || 0) === 0;
 
   return { isAddDisabled, isRemoveDisabled };

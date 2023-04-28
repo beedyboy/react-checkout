@@ -1,13 +1,22 @@
 import "./LoadingIcon.css";
+import { useContext } from "react";
+import { CheckoutContext } from "../../context/CheckoutContext";
 
-const LoadingIcon = ({ isLoading }) => (
-  <div className={`${isLoading ? "loading-div" : "hide"}`}>
-    <span
-      className={`loading-icon ${isLoading ? "loading" : ""}`}
+const LoadingIcon = () => {
+  const { state } = useContext(CheckoutContext);
+  return (
+    <div
+      className={`${state.isLoading ? "loading-div" : "hide"}`}
     >
-      Health Shop
-    </span>
-  </div>
-);
+      <span
+        className={`loading-icon ${
+          state.isLoading ? "loading" : ""
+        }`}
+      >
+        Health Shop
+      </span>
+    </div>
+  );
+};
 
 export default LoadingIcon;

@@ -1,12 +1,14 @@
-import React from "react";
 import "./App.css";
 import Checkout from "../Checkout/Checkout";
+import CheckoutDataProvider from "../../context/CheckoutContext";
 
 function App() {
   return (
-    <div className="App">
-      <Checkout />
-    </div>
+    <CheckoutDataProvider>
+      <div className="App">
+        <Checkout />
+      </div>
+    </CheckoutDataProvider>
   );
 }
 

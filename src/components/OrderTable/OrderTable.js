@@ -1,29 +1,27 @@
 import TableRow from "./TableRow";
 import TableHeader from "./TableHead";
+import { Fragment, useContext } from "react";
+import { CheckoutContext } from "../../context/CheckoutContext";
 
-const OrderTable = ({
-  cart,
-  products,
-  addProductToCart,
-  removeProductFromCart,
-}) => {
+const OrderTable = () => {
+  const { state } = useContext(CheckoutContext);
   return (
     <table className="order-summary-table">
       <TableHeader />
       <tbody>
-        {Object.keys(cart).map((productId) => {
-          const product = products.find(
+        {Object.keys(state.cart).map((productId) => {
+          const product = state.products.find(
             (p) => p.id === parseInt(productId)
           );
-          const quantity = cart[productId];
+          const quantity = state.cart[productId];
           return (
-            <TableRow
-              product={product}
-              quantity={quantity}
-              productId={productId}
-              addProductToCart={addProductToCart}
-              removeProductFromCart={removeProductFromCart}
-            />
+            <Fragment key={productId}>
+              <TableRow
+                product={product}
+                quantity={quantity}
+                productId={productId}
+              />
+            </Fragment>
           );
         })}
       </tbody>
