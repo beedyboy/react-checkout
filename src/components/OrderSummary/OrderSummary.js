@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import OrderTable from "../OrderTable/OrderTable";
+import OrderTable from "./OrderTable";
 import { CheckoutContext } from "../../context/CheckoutContext";
 
 const OrderSummary = () => {

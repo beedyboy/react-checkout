@@ -1,7 +1,7 @@
 import { Fragment, useContext } from "react";
 import { ErrorMssg } from "../ErrorMssg/ErrorMssg";
 import LoadingIcon from "../LoadingIcon/LoadingIcon";
-import ProductList from "../ProductList/ProductList";
+import ProductList from "../Products/ProductList";
 import OrderSummary from "../OrderSummary/OrderSummary";
 import { CheckoutContext } from "../../context/CheckoutContext";
 
