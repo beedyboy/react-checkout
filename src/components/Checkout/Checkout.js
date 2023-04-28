@@ -7,6 +7,7 @@ import { CheckoutContext } from "../../context/CheckoutContext";
 
 const Checkout = () => {
   const { state } = useContext(CheckoutContext);
+
   return (
     <>
       {state.errorFetching ? (

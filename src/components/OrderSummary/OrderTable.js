@@ -5,6 +5,7 @@ import { CheckoutContext } from "../../context/CheckoutContext";
 
 const OrderTable = () => {
   const { state } = useContext(CheckoutContext);
+
   return (
     <table className="order-summary-table">
       <TableHeader />

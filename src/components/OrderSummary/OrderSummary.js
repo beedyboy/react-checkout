@@ -5,6 +5,7 @@ import { CheckoutContext } from "../../context/CheckoutContext";
 const OrderSummary = () => {
   const { total, discount, cartSubtotal } =
     useContext(CheckoutContext);
+
   return (
     <div className="checkout-grid">
       <h1>Order Summary</h1>

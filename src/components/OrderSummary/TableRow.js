@@ -4,6 +4,7 @@ import { CheckoutContext } from "../../context/CheckoutContext";
 const TableRow = ({ product, quantity, productId }) => {
   const { addProductToCart, removeProductFromCart } =
     useContext(CheckoutContext);
+
   return (
     <tr key={productId}>
       <td>{product.name}</td>

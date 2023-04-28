@@ -8,6 +8,7 @@ import { CheckoutContext } from "../../context/CheckoutContext";
 const Product = ({ product }) => {
   const { state, addProductToCart, removeProductFromCart } =
     useContext(CheckoutContext);
+
   const { handleAddToCart, handleRemoveFromCart } =
     addOrRemoveFromCart(
       product,
