@@ -2,11 +2,9 @@ import "./LoadingIcon.css";
 
 const LoadingIcon = ({ isLoading }) => {
   return (
-    <div className="loading-div">
+    <div className={`${isLoading ? "loading-div" : "hide"}`}>
       <span
-        className={`loading-icon ${
-          isLoading ? "loading" : "hide"
-        }`}
+        className={`loading-icon ${isLoading ? "loading" : ""}`}
       >
         Health Shop
       </span>

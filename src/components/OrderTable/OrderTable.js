@@ -16,7 +16,6 @@ const OrderTable = ({
       </thead>
       <tbody>
         {Object.keys(cart).map((productId) => {
-          console.log(products);
           const product = products.find(
             (p) => p.id === parseInt(productId)
           );
