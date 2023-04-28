@@ -1,3 +1,8 @@
+## Personal implementation
+
+Thank you for this opportunity, I have gone ahead to implement the required functionalities in the way I understood them and based on the current scope of the project. Also I have created a backend service hosted on render.com to fetch the products from, which is one of the extra requirements. the link to the hosted backend service is: https://react-checkout.onrender.com
+I have also done a demo video/ walkthrough of my implentation which I have uploaded on Vimeo, It can be viewed on this Link: https://vimeo.com/822024403/922335d35b
+
 # Checkout Component Implementation
 
 This project contains a React application that allows customers to order health products through a web portal. The main feature of the application is a checkout component that allows customers to view available health products, add them to a cart, and review their order summary before checking out.
@@ -22,7 +27,6 @@ To get started with this project, follow these steps:
 7. Commit your changes to the forked repository.
 8. Push the changes to the forked repository.
 9. Create a pull request to the original repository and make [@beedyboy](https://github.com/beedyboy) as a reviewer.
-
 
 ## Functionality
 
