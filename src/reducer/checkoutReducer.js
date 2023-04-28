@@ -26,6 +26,12 @@ const checkoutReducer = (state, action) => {
         cart: action.payload,
       };
 
+    case CHECKOUT_ACTIONS.ERROR_FETCHING:
+      return {
+        ...state,
+        errorFetching: action.payload,
+      };
+
     default:
       return state;
   }

@@ -2,16 +2,12 @@ import {
   totalPrice,
   addOrRemoveProductFromCart,
 } from "../helpers/helpers";
+import CHECKOUT_ACTIONS, {
+  INITIAL_STATE,
+} from "../constant/objectConstant";
 import { getProducts } from "../api/api";
 import checkoutReducer from "../reducer/checkoutReducer";
-import CHECKOUT_ACTIONS from "../constant/objectConstant";
 import { createContext, useEffect, useReducer } from "react";
-
-const INITIAL_STATE = {
-  cart: {},
-  products: [],
-  isLoading: true,
-};
 
 export const CheckoutContext = createContext();
 
@@ -23,15 +19,22 @@ const CheckoutDataProvider = ({ children }) => {
 
   useEffect(() => {
     (async () => {
-      const data = await getProducts();
-      dispatch({
-        type: CHECKOUT_ACTIONS.PRODUCTS,
-        payload: data,
-      });
-      dispatch({
-        type: CHECKOUT_ACTIONS.IS_LOADING,
-        payload: false,
-      });
+      try {
+        const data = await getProducts();
+        dispatch({
+          type: CHECKOUT_ACTIONS.PRODUCTS,
+          payload: data,
+        });
+        dispatch({
+          type: CHECKOUT_ACTIONS.IS_LOADING,
+          payload: false,
+        });
+      } catch (err) {
+        dispatch({
+          type: CHECKOUT_ACTIONS.ERROR_FETCHING,
+          payload: true,
+        });
+      }
     })();
   }, []);
 

@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
+import { ErrorMssg } from "../ErrorMssg/ErrorMssg";
 import LoadingIcon from "../LoadingIcon/LoadingIcon";
 import ProductList from "../ProductList/ProductList";
 import OrderSummary from "../OrderSummary/OrderSummary";
@@ -8,12 +9,18 @@ const Checkout = () => {
   const { state } = useContext(CheckoutContext);
   return (
     <>
-      <LoadingIcon />
-      {!state.isLoading && (
-        <>
-          <ProductList />
-          <OrderSummary />
-        </>
+      {state.errorFetching ? (
+        <ErrorMssg />
+      ) : (
+        <Fragment>
+          <LoadingIcon />
+          {!state.isLoading && (
+            <Fragment>
+              <ProductList />
+              <OrderSummary />
+            </Fragment>
+          )}
+        </Fragment>
       )}
     </>
   );
