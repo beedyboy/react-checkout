@@ -586,3 +586,181 @@
 [31m    at Module.require (node:internal/modules/cjs/loader:1028:19)[39m
 [31m    at require (node:internal/modules/cjs/helpers:102:18)[39m
 [31m    at Object.<anonymous> (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:1:1)[39m
+2023-04-29 00:11:44 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:17:13)[39m
+2023-04-29 00:11:44 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:17:13)[39m
+2023-04-29 00:14:27 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:18:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:14:27 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:18:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:18:17 [31merror[39m: [31munhandledRejection: bad auth : authentication failed[39m
+[31mMongoServerError: bad auth : authentication failed[39m
+[31m    at Connection.onMessage (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:447:20)[39m
+[31m    at MessageStream.<anonymous> (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:241:56)[39m
+[31m    at MessageStream.emit (node:events:513:28)[39m
+[31m    at MessageStream.emit (node:domain:489:12)[39m
+[31m    at processIncomingData (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:189:12)[39m
+[31m    at MessageStream._write (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:70:5)[39m
+[31m    at writeOrBuffer (node:internal/streams/writable:391:12)[39m
+[31m    at _write (node:internal/streams/writable:332:10)[39m
+[31m    at MessageStream.Writable.write (node:internal/streams/writable:336:10)[39m
+[31m    at TLSSocket.ondata (node:internal/streams/readable:754:22)[39m
+2023-04-29 00:18:17 [31merror[39m: [31munhandledRejection: bad auth : authentication failed[39m
+[31mMongoServerError: bad auth : authentication failed[39m
+[31m    at Connection.onMessage (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:447:20)[39m
+[31m    at MessageStream.<anonymous> (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:241:56)[39m
+[31m    at MessageStream.emit (node:events:513:28)[39m
+[31m    at MessageStream.emit (node:domain:489:12)[39m
+[31m    at processIncomingData (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:189:12)[39m
+[31m    at MessageStream._write (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:70:5)[39m
+[31m    at writeOrBuffer (node:internal/streams/writable:391:12)[39m
+[31m    at _write (node:internal/streams/writable:332:10)[39m
+[31m    at MessageStream.Writable.write (node:internal/streams/writable:336:10)[39m
+[31m    at TLSSocket.ondata (node:internal/streams/readable:754:22)[39m
+2023-04-29 00:23:11 [31merror[39m: [31munhandledRejection: bad auth : authentication failed[39m
+[31mMongoServerError: bad auth : authentication failed[39m
+[31m    at Connection.onMessage (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:447:20)[39m
+[31m    at MessageStream.<anonymous> (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:241:56)[39m
+[31m    at MessageStream.emit (node:events:513:28)[39m
+[31m    at MessageStream.emit (node:domain:489:12)[39m
+[31m    at processIncomingData (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:189:12)[39m
+[31m    at MessageStream._write (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:70:5)[39m
+[31m    at writeOrBuffer (node:internal/streams/writable:391:12)[39m
+[31m    at _write (node:internal/streams/writable:332:10)[39m
+[31m    at MessageStream.Writable.write (node:internal/streams/writable:336:10)[39m
+[31m    at TLSSocket.ondata (node:internal/streams/readable:754:22)[39m
+2023-04-29 00:23:11 [31merror[39m: [31munhandledRejection: bad auth : authentication failed[39m
+[31mMongoServerError: bad auth : authentication failed[39m
+[31m    at Connection.onMessage (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:447:20)[39m
+[31m    at MessageStream.<anonymous> (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:241:56)[39m
+[31m    at MessageStream.emit (node:events:513:28)[39m
+[31m    at MessageStream.emit (node:domain:489:12)[39m
+[31m    at processIncomingData (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:189:12)[39m
+[31m    at MessageStream._write (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:70:5)[39m
+[31m    at writeOrBuffer (node:internal/streams/writable:391:12)[39m
+[31m    at _write (node:internal/streams/writable:332:10)[39m
+[31m    at MessageStream.Writable.write (node:internal/streams/writable:336:10)[39m
+[31m    at TLSSocket.ondata (node:internal/streams/readable:754:22)[39m
+2023-04-29 00:25:24 [31merror[39m: [31munhandledRejection: bad auth : authentication failed[39m
+[31mMongoServerError: bad auth : authentication failed[39m
+[31m    at Connection.onMessage (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:447:20)[39m
+[31m    at MessageStream.<anonymous> (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:241:56)[39m
+[31m    at MessageStream.emit (node:events:513:28)[39m
+[31m    at MessageStream.emit (node:domain:489:12)[39m
+[31m    at processIncomingData (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:189:12)[39m
+[31m    at MessageStream._write (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:70:5)[39m
+[31m    at writeOrBuffer (node:internal/streams/writable:391:12)[39m
+[31m    at _write (node:internal/streams/writable:332:10)[39m
+[31m    at MessageStream.Writable.write (node:internal/streams/writable:336:10)[39m
+[31m    at TLSSocket.ondata (node:internal/streams/readable:754:22)[39m
+2023-04-29 00:25:24 [31merror[39m: [31munhandledRejection: bad auth : authentication failed[39m
+[31mMongoServerError: bad auth : authentication failed[39m
+[31m    at Connection.onMessage (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:447:20)[39m
+[31m    at MessageStream.<anonymous> (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\connection.ts:241:56)[39m
+[31m    at MessageStream.emit (node:events:513:28)[39m
+[31m    at MessageStream.emit (node:domain:489:12)[39m
+[31m    at processIncomingData (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:189:12)[39m
+[31m    at MessageStream._write (C:\Users\user\react-checkout\Backend\node_modules\mongodb\src\cmap\message_stream.ts:70:5)[39m
+[31m    at writeOrBuffer (node:internal/streams/writable:391:12)[39m
+[31m    at _write (node:internal/streams/writable:332:10)[39m
+[31m    at MessageStream.Writable.write (node:internal/streams/writable:336:10)[39m
+[31m    at TLSSocket.ondata (node:internal/streams/readable:754:22)[39m
+2023-04-29 00:30:19 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:18:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:30:19 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:18:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:33:24 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:18:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:33:24 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:18:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:35:08 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:19:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:35:08 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:19:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:37:04 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:19:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:37:04 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:19:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:39:10 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:19:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:39:10 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:19:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:58:48 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:21:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 00:58:48 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:21:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 01:00:36 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:21:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 01:00:36 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:21:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 01:05:30 [31merror[39m: [31munhandledRejection: Cannot overwrite `Product` model once compiled.[39m
+[31mOverwriteModelError: Cannot overwrite `Product` model once compiled.[39m
+[31m    at NativeConnection.Connection.model (C:\Users\user\react-checkout\Backend\node_modules\mongoose\lib\connection.js:1210:13)[39m
+[31m    at productModel (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:17:60)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+[31m    at async Function.readAll (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:22:21)[39m
+2023-04-29 01:05:30 [31merror[39m: [31munhandledRejection: Cannot overwrite `Product` model once compiled.[39m
+[31mOverwriteModelError: Cannot overwrite `Product` model once compiled.[39m
+[31m    at NativeConnection.Connection.model (C:\Users\user\react-checkout\Backend\node_modules\mongoose\lib\connection.js:1210:13)[39m
+[31m    at productModel (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.model.ts:17:60)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+[31m    at async Function.readAll (C:\Users\user\react-checkout\Backend\src\utils\db\userdb\productdb.manager.ts:22:21)[39m
+2023-04-29 01:13:25 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:21:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 01:13:25 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:21:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 01:15:10 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at getProducts (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:33:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 01:15:10 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at getProducts (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:33:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 01:16:35 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:21:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 01:16:35 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:21:13)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m

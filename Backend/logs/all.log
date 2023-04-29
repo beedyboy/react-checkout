@@ -1,3 +1,27 @@
 2023-04-28 23:25:37 [32minfo[39m: [32mListening on url http://localhost:undefined[39m
 2023-04-28 23:27:50 [32minfo[39m: [32mListening on url http://localhost:undefined[39m
 2023-04-28 23:28:49 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:11:24 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:14:15 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:17:58 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:19:31 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:25:11 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:27:08 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:29:56 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:32:06 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:32:48 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:34:55 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:36:51 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:38:53 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:58:37 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 00:58:48 [31merror[39m: [31mProduct validation failed: description: Path `description` is required.[39m
+2023-04-29 01:00:22 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 01:00:36 [31merror[39m: [31mNo write concern mode named 'majority/checkout' found in replica set configuration[39m
+2023-04-29 01:04:09 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 01:07:33 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 01:10:51 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 01:12:39 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 01:13:25 [31merror[39m: [31mCannot overwrite `Product` model once compiled.[39m
+2023-04-29 01:14:49 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 01:15:58 [32minfo[39m: [32mListening on url http://localhost:6000[39m
+2023-04-29 01:16:35 [31merror[39m: [31mCannot overwrite `Product` model once compiled.[39m

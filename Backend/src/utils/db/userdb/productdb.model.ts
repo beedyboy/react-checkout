@@ -6,9 +6,8 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 async function productModel() {
-  const db = new DB(process.env.URI_STRING + `/${process.env.DB_NAME}`);
+  const db = new DB(`${process.env.URI_STRING}`);
   await db.connect()
-  console.log(db.connection())
   const ProductSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
