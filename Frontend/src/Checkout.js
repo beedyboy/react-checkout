@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 // internal import
-import { getProducts } from "./api";
+import { getProducts, getApiProducts } from "./api";
 import LoadingIcon from "./LoadingIcon";
 
 // Product component
@@ -52,7 +52,8 @@ const Checkout = () => {
   useEffect(() => {
     async function fetchData() {
       const data = await getProducts();
-      setProducts(data);
+      const products = await getApiProducts();
+      setProducts(products);
     }
     // Show the loading icon while the data is being fetched
     setIsLoading(true);

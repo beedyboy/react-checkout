@@ -764,3 +764,9 @@
 [31mError: Internal Server Error[39m
 [31m    at createProduct (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:21:13)[39m
 [31m    at processTicksAndRejections (node:internal/process/task_queues:96:5)[39m
+2023-04-29 10:29:57 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at getProducts (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:34:13)[39m
+2023-04-29 10:29:57 [31merror[39m: [31munhandledRejection: Internal Server Error[39m
+[31mError: Internal Server Error[39m
+[31m    at getProducts (C:\Users\user\react-checkout\Backend\src\modules\project\project.controller.ts:34:13)[39m

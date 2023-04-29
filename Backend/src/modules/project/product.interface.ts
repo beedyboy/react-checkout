@@ -1,3 +1,4 @@
+// Interface for a product
 interface ProductInterface {
   _id?: string;
   name: string;

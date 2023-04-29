@@ -72,3 +72,8 @@ export function getProducts() {
     },
   ]);
 }
+
+export async function getApiProducts() {
+  const result = await fetch('http://localhost:6000/api/v1/products');
+  return result.products;
+}
