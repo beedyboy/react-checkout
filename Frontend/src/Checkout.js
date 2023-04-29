@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 // internal import
-import { getProducts, getApiProducts } from "./api";
+import { getApiProducts, getApiProduct } from "./api";
 import LoadingIcon from "./LoadingIcon";
 
 // Product component
@@ -31,7 +31,7 @@ export const ProductList = ({ products, addProductToCart, removeProductFromCart,
       <div className="card-container">
         {isLoading ? <LoadingIcon /> :  products.map((product) => (
           <div key={product.id} className="card">
-            <Product product={product} addProductToCart={() => addProductToCart(product.id)} removeFromCart={() => removeProductFromCart(product.id)}/>
+            <Product product={product} addProductToCart={() => addProductToCart(product._id)} removeFromCart={() => removeProductFromCart(product._id)}/>
           </div>
         ))}
       </div>
@@ -43,7 +43,7 @@ export const ProductList = ({ products, addProductToCart, removeProductFromCart,
 const Checkout = () => {
   // Define state variables
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [cart, setCart] = useState([]);
   const [isSubDisabled, setIsSubDisabled] = useState(false);
   const [isAddDisabled, setIsAddDisabled] = useState(false);
@@ -51,9 +51,8 @@ const Checkout = () => {
   // Fetch the product data on mount using useEffect
   useEffect(() => {
     async function fetchData() {
-      const data = await getProducts();
-      const products = await getApiProducts();
-      setProducts(products);
+      const data = await getApiProducts();
+      setProducts(data);
     }
     // Show the loading icon while the data is being fetched
     setIsLoading(true);
@@ -63,22 +62,23 @@ const Checkout = () => {
   }, []);
 
   // Add a product to the cart
-  const addProductToCart = (productId) => {
+  async function addProductToCart(productId) {
     // Find the product in the products array
-    const product = products[parseInt(productId) - 1];
+    const product = await getApiProduct(productId);
     // Update the cart array with the new product, unless it's already in the cart
     setCart((prev) => {
       setIsAddDisabled(true);
-      return cart.includes(product) ? [...prev] : [...prev, product];
+      const filtered = cart.filter((item) => item._id === productId);
+      return filtered.length > 0 ?  [...prev] : [...prev, product];
     })
-  };
+  }
 
   // Remove a product from the cart
-  const removeProductFromCart = (productId) => {
+  async function removeProductFromCart(productId) {
     // Find the product in the products array
-    const product = products[parseInt(productId) - 1];
+    const product = await getApiProduct(productId);
     // Get the index of the product in the cart
-    const index = cart.findIndex((p) => p.id === product.id);
+    const index = cart.findIndex((p) => p._id === product._id);
     if (index >= 0) {
       // Remove the product from the cart
       setCart(prev => {
@@ -87,16 +87,16 @@ const Checkout = () => {
         return front.concat(back);
       })
     }
-  };
+  }
 
 
   // Increase the quantity of a product in the cart
-  const increaseQuantityInCart = (productId) => {
+  async function increaseQuantityInCart(productId) {
     // Find the product in the products array
-    const product = products.find((p) => p.id === parseInt(productId));
+    const product = await getApiProduct(productId);
       
     // get the index of the product in the cart
-    const cartIndex = cart.findIndex((p) => p.id === product.id);
+    const cartIndex = cart.findIndex((p) => p._id === product._id);
 
     // Enable the decrease button if the quantity is greater than zero
     if ({...cart[cartIndex]}.quantity > 0) {
@@ -106,7 +106,7 @@ const Checkout = () => {
     const updatedProduct = { ...cart[cartIndex], quantity: cart[cartIndex].quantity + 1 };
     // Update the cart array
     setCart((prevCart) => {
-      const productIndex = prevCart.findIndex((p) => p.id === productId);
+      const productIndex = prevCart.findIndex((p) => p._id === productId);
       const updatedCart = [...prevCart];
       updatedCart[productIndex] = updatedProduct;
       return updatedCart;
@@ -119,12 +119,13 @@ const Checkout = () => {
   }
 
   // Decrease the quantity of a product in the cart
-  const reduceQuantityInCart = (productId) => {
+  async function reduceQuantityInCart(productId) {
     // Find the product in the products array
-    const product = products.find((p) => p.id === parseInt(productId));
+    const product = await getApiProduct(productId);
+    console.log(product);
       
     // get the index of the product in the cart
-    const cartIndex = cart.findIndex((p) => p.id === product.id);
+    const cartIndex = cart.findIndex((p) => p._id === product._id);
 
     // Update the quantity of the product
     const updatedProduct = { ...cart[cartIndex], quantity: cart[cartIndex].quantity - 1 };
@@ -133,7 +134,7 @@ const Checkout = () => {
     if (updatedProduct.quantity >= 0) {
       setCart((prevCart) => {
         // Find the index of the product in the previous cart array
-        const productIndex = prevCart.findIndex((p) => p.id === productId);
+        const productIndex = prevCart.findIndex((p) => p._id === productId);
         // Create a new cart array with the updated product quantity
         const updatedCart = [...prevCart];
         updatedCart[productIndex] = updatedProduct;
@@ -194,13 +195,13 @@ const Checkout = () => {
           </thead>
           <tbody>
             {cart.map((item) => (
-              <tr key={item.id}>
+              <tr key={item._id}>
                 <td>{item.name}</td>
                 <td>${item.price}</td>
                 <td>
-                  <button onClick={() => reduceQuantityInCart(item.id)} disabled={isSubDisabled}>-</button>
+                  <button onClick={() => reduceQuantityInCart(item._id)} disabled={isSubDisabled}>-</button>
                   {item.quantity}
-                  <button onClick={() => increaseQuantityInCart(item.id)} disabled={isAddDisabled}>+</button>
+                  <button onClick={() => increaseQuantityInCart(item._id)} disabled={isAddDisabled}>+</button>
                 </td>
                 <td>${calculateTotalProductPrice(item.quantity, item.price)}</td>
               </tr>

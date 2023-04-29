@@ -74,6 +74,13 @@ export function getProducts() {
 }
 
 export async function getApiProducts() {
-  const result = await fetch('http://localhost:6000/api/v1/products');
-  return result.products;
+  const result = await fetch('http://localhost:6060/api/v1/products');
+  const jsonResult = await result.json();
+  return jsonResult.products;
+}
+
+export async function getApiProduct(productId) {
+  const result = await fetch(`http://localhost:6060/api/v1/products/${productId}`);
+  const jsonResult = await result.json();
+  return jsonResult.products;
 }

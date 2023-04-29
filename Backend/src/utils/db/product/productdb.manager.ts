@@ -57,9 +57,6 @@ export default class ProductCRUD {
 
     // Find a product that matches the provided query and return it as a plain object
     const product = await this.Product.findOne(query);
-    if (!product) {
-      throw new Error('Product not found');
-    }
     return product.toObject();
   }
 

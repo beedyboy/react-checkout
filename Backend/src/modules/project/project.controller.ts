@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { Request, Response } from "express";
 import { createProduct } from "./project.service";
 import { BadRequestError, InternalServerError } from "../../commons/error";
@@ -23,6 +24,20 @@ export default class projectController {
   static async getProducts(req: Request, res: Response) {
     try{
       const products = await ProductCRUD.readAll();
+      res.status(200).json({
+        success: true,
+        products
+      })
+    } catch(e) {
+      logger.error(e);
+      throw new InternalServerError()
+    }
+  }
+
+  static async getProduct(req: Request, res: Response) {
+    try{
+      const productId = req.params.id;
+      const products = await ProductCRUD.readByQuery({_id: new mongoose.Types.ObjectId(productId)});
       res.status(200).json({
         success: true,
         products
