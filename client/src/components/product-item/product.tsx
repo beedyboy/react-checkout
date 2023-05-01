@@ -3,6 +3,8 @@ import "./product.scss";
 import { eye, cart, love } from "../../assets/images";
 import ReactStars from "react-rating-stars-component";
 import {Link} from "react-router-dom"
+import { addToCart } from "../../redux/slice/cart.slice";
+import { useAppDispatch } from "../../hooks/dispatsch";
 
 interface ProductProps {
     name: string;
@@ -22,6 +24,13 @@ const Product: React.FC<ProductProps> = ({name, price, description, ratings, ima
   const handleLikeClick = () => {
     like === 'like' ? setLike('unlike') : setLike('like');
   }
+
+  const dispatch = useAppDispatch()
+
+
+   const handleAddToCart = (item: any) => {
+    dispatch(addToCart(item));
+  };
 
   return (
     <div className="product-container center column">
@@ -43,8 +52,8 @@ const Product: React.FC<ProductProps> = ({name, price, description, ratings, ima
       </div>
       <div className="cart-view ">
         <div className="add-to-cart center">
-          <div className="cart-text center">
-            <span className="none_mobile">Add to cart</span>
+          <div className="cart-text center" onClick={() => handleAddToCart({id: _id, name, price, stock})}>
+            <span className="none_mobile" >Add to cart</span>
             <img src={cart} alt="cart" className="cart-icon" />
           </div>
           <Link to={`/product/${_id}`} className="view">

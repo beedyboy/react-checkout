@@ -5,6 +5,8 @@ import { store } from "./redux/store";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
 import RouterConfig from "./routes/routesConfig";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function App(): JSX.Element {
   return (
