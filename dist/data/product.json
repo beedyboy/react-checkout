@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Multivitamin Tablets",
+        "price": 14.99,
+        "description": "A daily multivitamin tablet that provides essential nutrients for overall health.",
+        "ratings": 4.5,
+        "images": "https://cdn.pixabay.com/photo/2020/05/23/19/33/vitamins-5211139_960_720.jpg",
+        "category": "Vitamins and Supplements",
+        "seller": "Health Store Inc.",
+        "stock": 100,
+        "createdAt": "2023-04-30T12:34:56.789Z"
+    },
+    {
+        "name": "Organic Facial Cleanser",
+        "price": 25.5,
+        "description": "A gentle facial cleanser made with all natural and organic ingredients.",
+        "ratings": 4.8,
+        "images": "https://cdn.pixabay.com/photo/2015/08/25/03/51/toner-906142_960_720.jpg",
+        "category": "Personal Care",
+        "seller": "Green Beauty Co.",
+        "stock": 50,
+        "createdAt": "2023-04-29T11:22:33.444Z"
+    },
+    {
+        "name": "Whey Protein Powder",
+        "price": 29.99,
+        "description": "A high quality whey protein powder for muscle growth and recovery.",
+        "ratings": 4.2,
+        "images": "https://cdn.pixabay.com/photo/2021/11/01/07/36/whey-6759621_960_720.jpg",
+        "category": "Sports Nutrition",
+        "seller": "Fitness Pro Supplements",
+        "stock": 75,
+        "createdAt": "2023-04-28T10:11:09.876Z"
+    },
+    {
+        "name": "Organic Coconut Oil",
+        "price": 12.99,
+        "description": "A versatile and healthy cooking oil made from organic coconuts.",
+        "ratings": 4.9,
+        "images": "https://cdn.pixabay.com/photo/2017/02/22/20/40/coconut-oil-on-wooden-spoon-2090576_960_720.jpg",
+        "category": "Natural and Organic",
+        "seller": "Healthy Pantry",
+        "stock": 200,
+        "createdAt": "2023-04-27T09:08:07.654Z"
+    },
+    {
+        "name": "Blood Pressure Monitor",
+        "price": 49.99,
+        "description": "A digital blood pressure monitor for accurate and easy monitoring at home.",
+        "ratings": 4.6,
+        "images": "https://cdn.pixabay.com/photo/2017/01/04/19/29/blood-pressure-monitor-1952924_960_720.jpg",
+        "category": "Medical Devices",
+        "seller": "MediTech Solutions",
+        "stock": 30,
+        "createdAt": "2023-04-26T08:07:06.543Z"
+    },
+    {
+        "name": "Pain Relief Cream",
+        "price": 9.99,
+        "description": "A topical cream for temporary relief of minor aches and pains.",
+        "ratings": 4.0,
+        "images": "https://media.istockphoto.com/id/1276766365/photo/tube-with-white-cream-or-ointment-blue-background.jpg?s=1024x1024&w=is&k=20&c=FprDe-cLOgu0QGi6Ab9EJxpawpbsxwpbkKDGaTuymdA=",
+        "category": "Over-the-Counter (OTC) Medications",
+        "seller": "Pharmax Pharmacy",
+        "stock": 150,
+        "createdAt": "2023-04-25T07:06:05.432Z"
+    },
+    {
+        "name": "Vegan Protein Bars",
+        "price": 2.99,
+        "description": "Delicious and nutritious vegan protein bars for a healthy snack on the go.",
+        "ratings": 4.4,
+        "images": "https://media.istockphoto.com/id/1215960133/photo/vegan-peanut-butter-bars.jpg?s=1024x1024&w=is&k=20&c=ReKCksO-az9dcL2760h1j2j1ZI-TnyzpXQAP9LcPttw=",
+        "category": "Sports Nutrition",
+        "seller": "Plant Power Foods",
+        "stock": 500,
+        "createdAt": "2023-04-24T06:05:04.321Z"
+    },
+    {
+        "name": "Probiotic Supplements",
+        "price": 19.99,
+        "description": "A daily probiotic supplement for digestive health and immune support.",
+        "ratings": 4.7,
+        "images": "https://media.istockphoto.com/id/1454446867/photo/wooden-spoon-of-yogurt-capsule.jpg?s=1024x1024&w=is&k=20&c=Fd6lrS6sg2X9NIdLqScNpDDrVuzFgFNYDlEEEd2GapA=",
+        "category": "Vitamins and Supplements",
+        "seller": "Nature's Health Foods",
+        "stock": 100,
+        "createdAt": "2023-04-23T05:04:03.210Z"
+    }
+]

@@ -1,6 +1,11 @@
+import React from "react";
 import "./LoadingIcon.css";
 
-const LoadingIcon = ({ isLoading }) => {
+interface LoadingIconProps {
+  isLoading: boolean;
+}
+
+const LoadingIcon = ({ isLoading }: LoadingIconProps) => {
   return (
     <div className={`loading-icon ${isLoading ? "loading" : ""}`}>
       <span>Health Shop</span>
