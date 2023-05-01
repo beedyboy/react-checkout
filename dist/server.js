@@ -13,6 +13,7 @@ dotenv_1.default.config({
     path: "server/config/config.env",
 });
 (0, connectDb_1.connectDb)();
+// seedProducts();
 // Handle uncaught exceptions
 process.on("uncaughtException", (err) => {
     console.log(`ERROR: ${err.stack}`);

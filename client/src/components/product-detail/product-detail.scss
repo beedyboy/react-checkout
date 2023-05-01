@@ -1,0 +1,131 @@
+@import "../../base.scss";
+
+.product_container {
+  position: relative;
+  padding: 50px 0;
+  align-items: flex-start !important;
+
+  .product_image {
+    .image {
+      width: 85%;
+      object-fit: cover;
+
+      @media (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .spinner {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .product_detail {
+    .product_title {
+      margin-bottom: 10px;
+
+      @media (max-width: 767px) {
+        text-align: center;
+      }
+    }
+
+    .price_container {
+      .price {
+        color: $black;
+        font-size: 18px;
+
+        @media (max-width: 767px) {
+          text-align: center;
+        }
+      }
+
+      .counter_container {
+        margin-bottom: 20px;
+
+        .counter_minus {
+          width: 35px;
+          height: 32px;
+          border: 0.5px solid $black;
+          color: $black;
+          cursor: pointer;
+          border-radius: 10px;
+          margin-right: 5px;
+          background-color: rgb(249, 245, 221);
+        }
+
+        .counter_value {
+          @extend .counter_minus;
+          cursor: text;
+          color: black;
+          width: 63px;
+          background-color: white;
+        }
+
+        .counter_add {
+          @extend .counter_minus;
+          background-color: rgb(205, 247, 214);
+        }
+      }
+    }
+
+    .stock {
+      font-size: 14px;
+    }
+
+    .description {
+      margin-bottom: 10px;
+
+      @media (max-width: 767px) {
+        text-align: center;
+      }
+    }
+
+    .seller {
+      font-size: 14px;
+    }
+  }
+
+  .review_modal {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    margin-left: -8vw;
+    margin-right: -4vw;
+
+    @media (max-width: 767px) {
+      margin-left: -2vw;
+      margin-right: -2vw;
+    }
+
+    .modal_text_container {
+      background-color: whitesmoke;
+      padding: 50px;
+      border-radius: 20px;
+      position: relative;
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: red;
+        background-color: white;
+        padding: 10px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+      }
+
+      .star {
+        margin-bottom: 10px;
+      }
+
+      .input {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

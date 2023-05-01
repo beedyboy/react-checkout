@@ -10,7 +10,7 @@ const catchAsyncErrors_1 = __importDefault(require("../middleware/catchAsyncErro
 const apiQuery_1 = __importDefault(require("../utils/apiQuery"));
 // Get all Products, Route to => api/v1/products?keyword=apple GET ***
 exports.getAllProducts = (0, catchAsyncErrors_1.default)(async (req, res, next) => {
-    const resultsPerPage = 8;
+    const resultsPerPage = 4;
     const productCount = await productModel_1.default.countDocuments();
     const apiQuery = new apiQuery_1.default(productModel_1.default.find(), req.query).paginate(resultsPerPage);
     const products = await apiQuery.query;

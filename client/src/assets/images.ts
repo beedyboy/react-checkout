@@ -1,0 +1,10 @@
+const IMAGE_PATH = `/assets/images`
+export const logo = `${IMAGE_PATH}/shop-now.png`
+export const cart = `${IMAGE_PATH}/shopping-cart.png`
+export const user = `${IMAGE_PATH}/user.png`
+export const facebook = `${IMAGE_PATH}/facebook.svg`
+export const google = `${IMAGE_PATH}/google.svg`
+export const whatsapp = `${IMAGE_PATH}/whatsapp.svg`
+export const call = `${IMAGE_PATH}/call-icon.svg`
+export const eye = `${IMAGE_PATH}/eye.svg`
+export const love = `${IMAGE_PATH}/love.svg`

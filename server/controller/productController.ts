@@ -7,7 +7,7 @@ import APIQuery from "../utils/apiQuery";
 // Get all Products, Route to => api/v1/products?keyword=apple GET ***
 export const getAllProducts = catchAsyncErrors(
   async (req: Request, res: Response, next: NextFunction) => {
-    const resultsPerPage = 8;
+    const resultsPerPage = 4;
     const productCount = await Product.countDocuments();
 
     const apiQuery = new APIQuery(Product.find(), req.query).paginate(

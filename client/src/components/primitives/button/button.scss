@@ -1,0 +1,39 @@
+@import "../../../base.scss";
+
+@mixin button($background-color) {
+  background-color: $background-color;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+  cursor: pointer;
+  min-width: 150px;
+  height: 30px;
+  transition: all 0.3s linear;
+
+  @media (max-width: 767px) {
+    min-width: 100px;
+  }
+
+  &:hover {
+    background-color: lighten($background-color, 10%);
+  }
+
+  .cart-icon {
+    margin-left: 10px;
+
+    @media (max-width: 767px) {
+      margin-left: 0px;
+    }
+  }
+}
+
+.button-blue {
+  @include button($light-blue);
+}
+
+.button-orange {
+  @include button($orange);
+}

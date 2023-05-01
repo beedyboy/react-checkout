@@ -5,12 +5,14 @@ import { Server } from "http";
 import productRoute from "./route/productRoute";
 import { connectDb } from "./config/connectDb";
 import errorMiddleWare from "./middleware/error";
+import { seedProducts } from "./utils/seeder";
 
 dotenv.config({
   path: "server/config/config.env",
 });
 
 connectDb();
+// seedProducts();
 
 
 // Handle uncaught exceptions

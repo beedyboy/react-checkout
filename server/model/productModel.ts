@@ -53,18 +53,6 @@ const productSchema = new Schema({
     maxLength: [5, "Product stock must be at most 10 characters"],
     default: 0,
   },
-  numOfReviews: {
-    type: Number,
-    default: 0,
-  },
-  reviews: [
-    {
-      rating: {
-        type: Number,
-        required: true,
-      },
-    },
-  ],
   createdAt: {
     type: Date,
     default: Date.now,
