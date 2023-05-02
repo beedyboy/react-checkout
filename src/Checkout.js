@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getProducts } from './api';
-// import axios from 'axios';
+// import { getProducts } from './api';
+import axios from 'axios';
 import LoadingIcon from './LoadingIcon';
 
 const Product = ({ product, addProductToCart, removeProductFromCart, cartItem }) => {
@@ -83,7 +83,7 @@ export const CartItem = (props) => {
         {Number(props.quantity)}
         <button disabled={disableAdd} onClick={props.onAdd}>+</button>
       </td>
-      <td>{props.price* props.quantity}</td>
+      <td>{(props.price* props.quantity).toFixed(2)}</td>
     </tr>
   );
 };
@@ -100,11 +100,11 @@ const Checkout = () => {
     async function fetchData() {
       setIsLoading(true);
       // Using the provided JSON data
-      const data = await getProducts();
-      setProducts(data);
-      /* Products from a mongodb node backend */
-      // const { data } = await axios.get("http://localhost:4008/api/products")
-      // setProducts(data.data);
+      // const data = await getProducts();
+      // setProducts(data);
+      /* Products from a mongodb node backend check how to start server in the readme file*/
+      const { data } = await axios.get("http://localhost:4008/api/products")
+      setProducts(data.data);
       setIsLoading(false);
     }
     fetchData();

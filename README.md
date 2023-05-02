@@ -65,6 +65,11 @@ Consider doing any of the senior role requirements, if you haven't already, or a
 - Create a backend in express or Nest.js app to return products and the frontend should consume accordingly.
 - Write your own Express server that serves the app.
 
+## To start the server
+
+- cd into server, and then cd into backend.
+- Then run npm start to start the server.
+
 ## Conclusion
 
 Thank you for your interest in this project! We look forward to seeing your implementation. If you have any questions, please don't hesitate to reach out.
