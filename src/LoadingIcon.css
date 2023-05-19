@@ -9,6 +9,12 @@
   animation: spin 1s infinite;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
